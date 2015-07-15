@@ -1,0 +1,10 @@
+var merchants = require('../controllers/faker.controller');
+
+module.exports = function(app) {
+    app.route('/api/20150101/securityDevice/businessunits')
+        .get(merchants.list);
+
+    app.route('/api/20150101/securityDevice/businessunits/:businessUnitId')
+        .get(merchants.read)
+        .post(merchants.update);
+};

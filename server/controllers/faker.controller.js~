@@ -1,0 +1,44 @@
+var faker = require('faker'),
+    _ = require('underscore'),
+    _s = require('underscore.string');
+    
+var getErrorMessage = function(err) {
+    if (err.errors) {
+        for (var errName in err.errors) {
+            if (err.errors[errName].message) return err.errors[errName].message;
+        }
+    } else {
+        return 'Unknown server error';
+    }
+};
+
+
+exports.list = function(req, res, next) {
+    console.log('list fakers, (' + process.env.NODE_ENV + ')');
+    var fakeNames = [];
+
+    for (var i = 0; i < 10; i++) {
+      fakeNames.push(faker.name.findName());
+    }
+    res.send({
+       Fakers: fakeNames
+    });
+};
+
+exports.update = function (req, res, next) {
+    console.log('update faker');
+    
+    var name = req.body;
+    
+    res.send({ updated: true });
+};
+
+exports.read = function (req, res, next) {
+    console.log('get faker');
+    
+    if (!req.params || !req.params.fakerId) {
+        return next("faker Id must be specified to retrieve a faker.");
+    } else {
+        res.json(faker.name.findName());
+    }
+};

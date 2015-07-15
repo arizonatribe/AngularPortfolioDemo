@@ -1,0 +1,24 @@
+exports.config = {
+  allScriptsTimeout: 11000,
+
+  specs: [
+    '*scenario.js'
+  ],
+
+  capabilities: {
+    browserName: 'phantomjs',
+    'phantomjs.cli.args': ['--ignore-ssl-errors=true',  '--web-security=false']
+  },
+
+  chromeDriver: '../node_modules/protractor/selenium/chromedriver',
+
+  seleniumServerJar: '../node_modules/protractor/selenium/selenium-server-standalone-2.45.0.jar',
+
+  baseUrl: 'http://localhost:3030',
+
+  framework: 'jasmine',
+
+  jasmineNodeOpts: {
+    defaultTimeoutInterval: 30000
+  }
+};

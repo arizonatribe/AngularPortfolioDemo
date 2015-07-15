@@ -1,0 +1,6 @@
+﻿{
+    "clientId": "2ECA58ED-4CA2-4AD5-BCAA-3A29834CC3C3",
+    "authServerUrl": "http://localhost:3030/api/auth/oauth2/token",
+    "apiBaseUrl": "http://localhost:3030/api/",
+    "socketHubLink": "http://localhost:3030/api/notification"
+}

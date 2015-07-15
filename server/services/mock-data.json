@@ -1,0 +1,29 @@
+{
+  "users": [
+    {
+      "username": "hardWorker@email.com",
+      "password": "P@ssw0rd",
+      "role": "applicant"
+    },
+    {
+      "username": "businessPerson@email.com",
+      "password": "P@ssw0rd",
+      "role": "employer"
+    },
+    {
+      "username": "webmaster@email.com",
+      "password": "P@ssw0rd",
+      "role": "admin"
+    }
+  ],
+  "clientIds": [
+    "CAA78020-B6F3-4F94-A54F-85312F860336",
+    "2ECA58ED-4CA2-4AD5-BCAA-3A29834CC3C3"
+  ],
+  "headers": [
+    {"name": "Access-Control-Allow-Origin", "value": "http://localhost:30000"},
+    {"name": "Access-Control-Allow-Methods", "value": "GET, POST, PUT, DELETE, OPTIONS, HEAD"},
+    {"name": "Access-Control-Allow-Headers", "value": "X-Requested-With,content-type,Authorization"},
+    {"name": "Access-Control-Allow-Credentials", "value": true}
+  ]
+}
