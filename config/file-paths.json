@@ -11,11 +11,51 @@
 		"public/app/**/*.config.js"
 	],
 	"codePathsVerbose": [
+	  "public/app/shared/shared.module.js",
+	  "public/app/components/login/login.module.js",
+	  "public/app/components/login/login.config.js",
+	  "public/app/shared/api-call-handler.service.js",
+	  "public/app/shared/event.service.js",
+	  "public/app/shared/local-config.service.js",
+	  "public/app/shared/storage.service.js",
+	  "public/app/shared/error.service.js",
+	  "public/app/shared/validation.service.js",
+	  "public/app/shared/error.directive.js",
+	  "public/app/shared/url.service.js",
+	  "public/app/components/login/auth.store.js",
+	  "public/app/components/login/auth.service.js",
+	  "public/app/components/login/login.controller.js",
+	  "public/app/config.module.js"
 	],
     "mockPaths": [
-        "config/tests/unit-test.fake-data.js"
+        "config/tests/unit-test.fake-data.js",
+		"config/tests/mock.api-call-handler.service.js",
+		"config/tests/mock.auth.store.js",
+		"config/tests/mock.auth-service.js",
+		"config/tests/mock.error.service.js",
+		"config/tests/mock.users.js",
+		"config/tests/mock.authToken.js",
+		"config/tests/mock.config.js",
+		"config/tests/mock.local-config.service.js",
+		"config/tests/mock.local-storage.service.js",
+		"config/tests/mock.login.directive.js",
+	  	"config/tests/mock.socket-service.js",
+		"config/tests/mock.storage.js"
     ],
 	"testPaths": [
+		"public/app/shared/tests/config.module.test.js",
+		"public/app/shared/tests/shared.module.test.js",
+	  	"public/app/shared/tests/shared.config.test.js",
+		"public/app/shared/tests/error.service.test.js",
+		"public/app/shared/tests/local-config.service.test.js",
+		"public/app/shared/tests/storage.service.test.js",
+		"public/app/shared/tests/validation.service.test.js",
+		"public/app/shared/tests/api-call-handler.service.test.js",
+		"public/app/components/login/tests/login.module.test.js",
+		"public/app/components/login/tests/auth.store.test.js",
+		"public/app/components/login/tests/auth.service.test.js",
+		"public/app/components/login/tests/login.controller.test.js",
+		"public/app/shared/tests/error.directive.test.js"
 	],
 	"libraryPaths": [
         "public/app/bower_components/modernizr/modernizr.js",

@@ -1,0 +1,47 @@
+﻿doctype html
+html(lang="en")
+    head
+        meta(charset="utf-16")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1")
+        meta(charset="utf-8")
+        meta(lang="en")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1")
+        title Angular JS Portfolio Demo
+        //-<!-- build:css css/vendor.min.css -->
+        link(rel="stylesheet", href="bower_components/html5-boilerplate/css/normalize.css")
+        link(rel="stylesheet", href="bower_components/html5-boilerplate/css/main.css")
+        //-<!-- endbuild -->
+        //-<!-- build:css css/app.min.css -->
+        link(rel="stylesheet", href="assets/styles/devcss/dev.css")
+        //-<!-- endbuild -->
+        script(type="text/javascript", socket-hub-link)
+    body
+        div(ui-view="content")
+        //-<!-- build:js js/vendor.min.js -->
+        script(src="bower_components/angular/angular.js")
+        script(src="bower_components/cryptojslib/rollups/aes.js")
+        script(src="bower_components/underscore/underscore.js")
+        script(src="bower_components/underscore.string/lib/underscore.string.js")
+        script(src="bower_components/angular-animate/angular-animate.js")
+        script(src="bower_components/angular-ui-router/release/angular-ui-router.js")
+        script(src="bower_components/angular-local-storage/dist/angular-local-storage.js")
+        //-<!-- endbuild -->
+        //-<!-- build:js js/app.min.js -->
+        script(src="shared/shared.module.js")
+        script(src="components/login/login.module.js")
+        script(src="shared/shared.config.js")
+        script(src="shared/error.service.js")
+        script(src="shared/validation.service.js")
+        script(src="shared/url.service.js")
+        script(src="shared/storage.service.js")
+        script(src="shared/local-config.service.js")
+        script(src="shared/event.service.js")
+        script(src="shared/api-call-handler.service.js")
+        script(src="components/login/auth.store.js")
+        script(src="components/login/auth.service.js")
+        script(src="components/login/login.controller.js")
+        script(src="shared/error.directive.js")
+        script(src="config.module.js")
+        //-<!-- endbuild -->

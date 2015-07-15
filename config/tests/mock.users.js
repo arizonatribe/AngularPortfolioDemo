@@ -1,0 +1,24 @@
+(function() {
+  'use strict';
+  angular.module('folio.unit-testing.users', [])
+      .value('users', [
+        {
+          username: 'hardWorker@email.com',
+          password: 'P@ssw0rd',
+          role: 'applicant',
+          access_token: 'E0FYS6FqJcJKYLl6fMSP7tnljjl8xBZOoL5gwAiXbF1LD92Jzu1pm5qj8uuNbV3on3FFb024pBfsV.vs9DF3rKY2zt0ly5rHeopujbXHhEHdO1FgbRgfLFaMfV1BBleLrTNR0ks6oL2rD1yIo6B3tFrCMgPTBeQvsSCludoCgf7YuDFMPOYfy8iwVudfV78NMj0ersr75LauZJ0ZFJw7Wsy6YJC2EmKEYNxe7eWx6uFkREk7pDPlHd7TvlfqFZHZFjzeJ4Fv2aYglbTgt1e72K0nCky0P90cPNZozxCS7aCetV21erOJf9xVqZJ.Ebj6'
+        },
+        {
+          username: 'businessPerson@email.com',
+          password: 'P@ssw0rd',
+          role: 'employer',
+          access_token: 'lTlnUbT1jVHjzYX7tXIgsUP47ThfiEwmOkpXxZdZ0NjP7SbtxXx3Se0QMCA8vJD1kbT9IAY4u7gJZvUEBna1SCF5W9TSdQn0U3YOeLcDBUsLmcPrHKvg71JPPIEkUtHyG5AzmxS1JslRTPYRUkLAzb6C7nOAuLbFH7roKY1zpTLZmuHhOvYrLa3vr0Fkw1U2Vc4t2BPhpRc0HsoIIOCDHdoHLZLyohsJVUvZQ0tMbEJm1MKLlEQra49NPRG6Dj6BRXOivULPChUexgNqRCuMj5847zPEeYDGXDxkQKCezThm5vutc9UgHSfwjSqrSSb0'
+        },
+        {
+          username: 'webmaster@email.com',
+          password: 'P@ssw0rd',
+          role: 'admin',
+          access_token: 'Q0G4jkPLNiWg0ziIL9D2WmkhYBCkvbKgl1XqsM9zhNUcJM224c6fhcakjE.J3AQtj.kOmsOurmuZq4Std3nJb1fzVg1iaguWpmPYi50ZKTjQUJiFqIPY3GcWw39viBVyv7a1SgmXvf6oCtYODPzAoCbkD3c2XqFY.G8THTckPh4JRdq5xmDGnhA7Wn6gNFVcEVYFzu2v2s.hcIgsbH71ppK96GMrqGz6V2qVg2LBT.qw5rGpfsydqeDzgDjc7IGiaZ1wSkKTctT5cWDtMmU8tcL7oFN5BzTbswdvcmI2NvgEjoLQ80HDPLM56FShD6PI'
+        }
+      ]);
+})();
