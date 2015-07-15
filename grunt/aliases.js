@@ -72,8 +72,6 @@ module.exports = {
    * <li>{@link GruntFile.less}:dev</li>
    * <li>{@link GruntFile.copy}:devmock</li>
    * <li>{@link GruntFile.jade}:dev</li>
-   * <li>{@link GruntFile.express}:dev</li>
-   * <li>{@link GruntFile.express}:demo</li>
    * <li>{@link GruntFile.concurrent:dev}</li>
    * </ul>
    * @name GruntFile.tasks#devmock-full
@@ -85,7 +83,6 @@ module.exports = {
       'less:dev',
       'copy:devmock',
       'jade:dev',
-      'express:dev',
       'concurrent:dev'
   ],
   /**

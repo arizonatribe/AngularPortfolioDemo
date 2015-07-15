@@ -1,0 +1,47 @@
+{
+	"codePaths": [
+		"public/app/**/*.module.js",
+		"public/app/**/*.provider.js",
+		"public/app/**/*.store.js",
+		"public/app/**/*.filter.js",
+		"public/app/**/*.service.js",
+		"public/app/**/*.resource.js",
+		"public/app/**/*.directive.js",
+		"public/app/**/*.controller.js",
+		"public/app/**/*.config.js"
+	],
+	"codePathsVerbose": [
+	],
+    "mockPaths": [
+        "config/tests/unit-test.fake-data.js"
+    ],
+	"testPaths": [
+	],
+	"libraryPaths": [
+        "public/app/bower_components/modernizr/modernizr.js",
+        "public/app/bower_components/jquery/dist/jquery.js",
+        "public/app/bower_components/underscore/underscore.js",
+        "public/app/bower_components/underscore.string/lib/underscore.string.js",
+        "public/app/bower_components/cryptojslib/rollups/aes.js",
+        "public/app/bower_components/angular/angular.js",
+        "public/app/bower_components/angular-animate/angular-animate.js",
+        "public/app/bower_components/angular-ui-router/release/angular-ui-router.js",
+        "public/app/bower_components/angular-local-storage/dist/angular-local-storage.js"
+	],
+    "libraryTestPaths": [
+        "public/app/bower_components/angular-mocks/angular-mocks.js"
+    ],
+	"jadePaths": [
+		"public/app/**/*.jade"
+	],
+	"assetPaths": [
+		"public/assets/img/**/*.*"
+	],
+	"lessPaths": [
+		"public/assets/styles/**/*.less"
+	],
+    "vendorCssPaths": [
+        "public/app/bower_components/html5-boilerplate/css/normalize.css",
+        "public/app/bower_components/html5-boilerplate/css/main.css"
+    ]
+}

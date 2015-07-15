@@ -14,7 +14,7 @@ npm install
 Then run the following command to start up the server:
 
 ```
-grunt concurrent:dev
+grunt devmock
 ```
 
 Now you can attempt to send requests to the mock server:

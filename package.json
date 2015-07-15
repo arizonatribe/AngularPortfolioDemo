@@ -38,7 +38,6 @@
     "grunt-processhtml": "latest",
     "grunt-protractor-runner": "^2.0.0",
     "grunt-sass": "latest",
-
     "jade": "1.7.0",
     "jasmine-core": "^2.2.0",	
     "jasmine-expect": "^1.22.3",
@@ -78,8 +77,7 @@
     "preupdate-webdriver": "npm install",
     "update-webdriver": "webdriver-manager update",
     "preprotractor": "npm run update-webdriver",
-    "protractor": "protractor e2e-tests/protractor.conf.js",
-    "update-index-async": "node -e \"require('shelljs/global'); sed('-i', /\\/\\/@@NG_LOADER_START@@[\\s\\S]*\\/\\/@@NG_LOADER_END@@/, '//@@NG_LOADER_START@@\\n' + sed(/sourceMappingURL=angular-loader.min.js.map/,'sourceMappingURL=bower_components/angular-loader/angular-loader.min.js.map','app/bower_components/angular-loader/angular-loader.min.js') + '\\n//@@NG_LOADER_END@@', 'app/index-async.html');\""
+    "protractor": "protractor e2e-tests/protractor.conf.js"
   },
   "jscsConfig": {
     "preset": "airbnb",
@@ -91,7 +89,7 @@
     "requireCamelCaseOrUpperCaseIdentifiers": "ignoreProperties",
     "excludeFiles": [
       "node_modules/**",
-      "app/bower_components"
+      "public/app/bower_components"
     ]
   }
 }
