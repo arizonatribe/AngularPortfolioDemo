@@ -6,7 +6,7 @@
 module.exports = {
   dev: {
     files: {
-      'app/assets/styles/devcss/dev.css': 'public/assets/styles/app.less'
+      'public/assets/styles/devcss/dev.css': 'public/assets/styles/app.less'
     }
   },
   release: {

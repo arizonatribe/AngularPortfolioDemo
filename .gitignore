@@ -1,6 +1,9 @@
 node_modules/
 bower_components/
 public/app/bower_components/
+public/assets/config/
+public/assets/styles/devcss/
+public/app/**/*.html
 .idea
 .rebooted
 npm-debug.log
