@@ -1,4 +1,4 @@
 module.exports = {
-    sessionSecret: 'portfolioSessionSecret',
-    sessionName: 'connect.folio'
+  sessionSecret: 'portfolioSessionSecret',
+  sessionName: 'connect.folio'
 };

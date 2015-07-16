@@ -2,12 +2,10 @@
 
 var express = require('./express'),
     http = require('http'),
-    socketio = require('socket.io');
-
-var app = express();
-
-var server = http.createServer(app);
-var io = socketio.listen(server);
+    socketio = require('socket.io'),
+    app = express(),
+    server = http.createServer(app),
+    io = socketio.listen(server);
 
 require('./socketio')(server, io);
 require('../server/routes/socket.routes.js')(app, io);

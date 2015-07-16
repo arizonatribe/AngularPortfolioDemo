@@ -3,27 +3,27 @@ var jobs = [],
 		faker = require('faker');
 
 module.exports.createJobListing = function(overrides) {
-	var job = {
-		id: faker.random.uuid(),
-		description: overrides && overrides.description ? overrides.description : faker.lorem.paragraphs(),
-		requirements: overrides && overrides.requirements ? overrides.requirements : faker.lorem.paragraphs()
-	};
+  var job = {
+    id: faker.random.uuid(),
+    description: overrides && overrides.description ? overrides.description : faker.lorem.paragraphs(),
+    requirements: overrides && overrides.requirements ? overrides.requirements : faker.lorem.paragraphs()
+  };
 
-	return utilities.createHelper(job, jobs);
+  return utilities.createHelper(job, jobs);
 };
 
 module.exports.get = function(jobId) {
-	return utilities.getHelper(jobId, jobs);
+  return utilities.getHelper(jobId, jobs);
 };
 
 module.exports.set = function(job) {
-	return utilities.updateHelper(job.id, job, jobs);
+  return utilities.updateHelper(job.id, job, jobs);
 };
 
 module.exports.delete = function(jobId) {
-	return utilities.deleteHelper(jobId, jobs);
+  return utilities.deleteHelper(jobId, jobs);
 };
 
 module.exports.list = function() {
-	return jobs;
+  return jobs;
 };

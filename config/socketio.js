@@ -1,13 +1,13 @@
 module.exports = function(server, io) {
-    var notificationNamespace = io.of('/api/notification');
+  var notificationNamespace = io.of('/api/notification');
 
-    notificationNamespace.use(function(socket, next) {
-        var data = socket.request;
+  notificationNamespace.use(function(socket, next) {
+    var data = socket.request;
 
-        next();
-    });
+    next();
+  });
 
-    notificationNamespace.on('connection', function(socket) {
-        //require('../server/controllers/socket.controller')(notificationNamespace);
-    });
+  notificationNamespace.on('connection', function(socket) {
+    //require('../server/controllers/socket.controller')(notificationNamespace);
+  });
 };
