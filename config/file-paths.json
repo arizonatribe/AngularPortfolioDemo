@@ -13,7 +13,7 @@
 	"codePathsVerbose": [
 	  "public/app/shared/shared.module.js",
 	  "public/app/components/login/login.module.js",
-	  "public/app/components/login/login.config.js",
+	  "public/app/shared/shared.config.js",
 	  "public/app/shared/api-call-handler.service.js",
 	  "public/app/shared/event.service.js",
 	  "public/app/shared/local-config.service.js",
@@ -61,7 +61,7 @@
         "public/app/bower_components/modernizr/modernizr.js",
         "public/app/bower_components/jquery/dist/jquery.js",
         "public/app/bower_components/underscore/underscore.js",
-        "public/app/bower_components/underscore.string/lib/underscore.string.js",
+        "public/app/bower_components/underscore.string/dist/underscore.string.js",
         "public/app/bower_components/cryptojslib/rollups/aes.js",
         "public/app/bower_components/angular/angular.js",
         "public/app/bower_components/angular-animate/angular-animate.js",

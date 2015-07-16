@@ -6,7 +6,8 @@
 
   /**
    * Formats and places the errors or warnings into the DOM
-   * @class folio.shared.ErrorMessageHandlerDirective
+   * @name folio.shared.ErrorMessageHandlerDirective
+   * @class
    * @returns {{restrict: string, templateUrl: string, controllerAs: string, controller: string, bindToController: boolean}}
    * @constructor
    */

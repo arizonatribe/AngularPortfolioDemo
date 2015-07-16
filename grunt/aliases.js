@@ -14,6 +14,7 @@ module.exports = {
    * <li>{@link GruntFile.uglify}</li>
    * <li>{@link GruntFile.less}:release</li>
    * <li>{@link GruntFile.cssmin}</li>
+   * <li>{@link GruntFile.copy}</li>
    * <li>{@link GruntFile.jadeUsemin}</li>
    * <li>{@link GruntFile.jade}:release</li>
    * <li>{@link GruntFile.clean}:jade</li>
@@ -26,7 +27,7 @@ module.exports = {
       'uglify',
       'less:release',
       'cssmin',
-      'copy:di',
+      'copy:prod',
       'jadeUsemin',
       'jade:release',
       'clean:jade',
@@ -62,7 +63,7 @@ module.exports = {
       'clean:less'
   ],
   /**
-   * The sequence of "dev" tasks that also run a mock server of the BbAuth APIs for a self-contained development
+   * The sequence of "dev" tasks that also run a mock server of the APIs for a self-contained development
    * environment and additionally run a mock server that simulates a client application that would make use of
    * the login page. This allows for self-contained full end-to-end testing.
    * <ul>

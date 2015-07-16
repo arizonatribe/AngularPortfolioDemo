@@ -13,7 +13,7 @@ module.exports = {
     },
     files: [{
       dest: 'dist/index.jade',
-      src: 'app/index.jade'
+      src: 'public/app/index.jade'
     }]
   }
 };

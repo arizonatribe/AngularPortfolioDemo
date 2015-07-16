@@ -12,7 +12,8 @@
 
     /**
      * AuthStore Javascript class constructor sets default values for certain members and injects dependencies into the constructed instance
-     * @class folio.auth.AuthStore
+     * @name folio.auth.AuthStore
+     * @class
      * @param {object} _ underscore js library with our custom mixins
      * @param {object} storageService wrapper for the angular-local-storage service, meant to make cookie usage more simple
      * @param {object} _s underscore.string library

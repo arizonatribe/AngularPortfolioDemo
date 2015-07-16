@@ -5,13 +5,13 @@
 
     /**
      * LoginController Javascript class constructor sets default values for certain members and injects dependencies into the constructed instance
-     * @class folio.login.LoginController
+     * @name folio.login.LoginController
+     * @class
      * @param {object} authService manages user authentication request to auth API
      * @param {object} errorHandlingService error handling service
      * @param {object} validationService input validation service
      * @param {object} urlService URL parsing and validation service
      * @param {object} apiCallHandlerService manages API calls and throttling of multiple calls
-     * @param {object} identityProviders collection of identity providers from which the user will select a relam to authenticate against
      * @param {object} $state angular $state service from which to obtain 'routing' parameters for ui-router
      * @param {object} _ underscore js library with our custom mixins
      * @param {object} $rootScope angular $rootScope service

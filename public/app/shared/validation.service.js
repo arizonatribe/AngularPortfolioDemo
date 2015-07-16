@@ -5,7 +5,8 @@
 
   /**
    * ValidationService Javascript class constructor sets default values for certain members and injects dependencies into the constructed instance
-   * @class folio.shared.ValidationService
+   * @name folio.shared.ValidationService
+   * @class
    * @constructor
    * @returns {{getSimpleAlphaNumericRules: Function, getValidations: Function, isValid: Function }}
    */
@@ -13,7 +14,7 @@
 
     /**
      * A method which concatenates the tile and description fields
-     * @name folio.shared.ValidationService#getFullDescription
+     * @method folio.shared.ValidationService#getFullDescription
      * @private
      * @returns {string} concatenation of the title and description fields
      */

@@ -7,7 +7,7 @@
 module.exports = {
   dev: {
     options: {
-      bases: ['app'],
+      bases: ['public/app'],
       port: 3030,
       hostname: '0.0.0.0',
       livereload: true

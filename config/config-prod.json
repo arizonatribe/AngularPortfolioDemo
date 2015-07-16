@@ -1,6 +1,6 @@
 ﻿{
     "clientId": "CAA78020-B6F3-4F94-A54F-85312F860336",
-    "authServerUrl": "http://localhost:3000/api/auth/oauth2/token",
-    "apiBaseUrl": "http://localhost:3000/api/",
+    "authServerUrl": "http://localhost:3000/auth/oauth2/token",
+    "apiBaseUrl": "http://localhost:3000/",
     "socketHubLink": "https://localhost:3000/api/notification"
 }

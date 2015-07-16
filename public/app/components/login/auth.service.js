@@ -5,7 +5,8 @@
 
     /**
      * AuthService Javascript class constructor sets default values for certain members and injects dependencies into the constructed instance
-     * @class folio.auth.AuthService
+     * @name folio.auth.AuthService
+     * @class
      * @param {object} $q angular $q service
      * @param {object} _ underscore js library with our custom mixins
      * @param {object} _s underscore.string library

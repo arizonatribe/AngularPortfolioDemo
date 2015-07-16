@@ -5,7 +5,8 @@
 
   /**
    * UrlService Javascript class constructor sets default values for certain members and injects dependencies into the constructed instance
-   * @class folio.shared.UrlService
+   * @name folio.shared.UrlService
+   * @class
    * @param {object} _ underscore js library with our custom mixins
    * @param {object} _s underscore.string library
    * @param {object} errorHandlingService error handling service

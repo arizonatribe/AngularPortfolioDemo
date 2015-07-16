@@ -1,5 +1,8 @@
 node_modules/
 bower_components/
+public/app/bower_components/
 .idea
 .rebooted
 npm-debug.log
+dist/
+docs/

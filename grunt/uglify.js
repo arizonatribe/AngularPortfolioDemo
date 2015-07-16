@@ -7,7 +7,9 @@ var filePaths = require('../config/file-paths.json');
  */
 module.exports = {
   options: {
-    banner: '/*\n <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> \n*/\n'
+    banner: '/*\n <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> \n*/\n',
+    sourceMap: true,
+    sourceMapIncludeSources: true
   },
   build: {
     files: {

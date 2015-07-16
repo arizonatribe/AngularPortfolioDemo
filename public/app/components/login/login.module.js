@@ -1,13 +1,14 @@
 ﻿(function() {
     'use strict';
     /**
-     * @class folio.auth
-     * @namespace
+     * Module which handles authentication calls and caching of OAuth access tokens locally (more low-level than
+     * {@link folio.login})
+     * @namespace folio.auth
      */
     angular.module('folio.auth', ['ng', 'folio.shared']);
     /**
-     * @name folio.login
-     * @namespace
+     * Module which handles the actual user login interactivity
+     * @namespace folio.login
      */
     angular.module('folio.login', ['ng', 'ui.router', 'folio.shared', 'folio.auth']);
 })();

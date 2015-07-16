@@ -5,7 +5,8 @@
 
   /**
    * ErrorHandlingService Javascript class constructor sets default values for certain members and injects dependencies into the constructed instance
-   * @class folio.shared.ErrorHandlingService
+   * @name folio.shared.ErrorHandlingService
+   * @class
    * @constructor
    * @returns {{getErrors: Function, getWarning: Function, enableLogging: Function, getErrorCodes: Function, stampErrorId: Function, handleErrors: Function, handleWarning: Function, clearError: Function, clearErrors: Function, clearWarning: Function, formatErrorMessage: Function, extractMessageFromErrorPromise: Function, handleErrorsAndWarnings: Function}}
    */

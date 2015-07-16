@@ -5,7 +5,8 @@
 
   /**
    * EventService Javascript class constructor sets default values for certain members and injects dependencies into the constructed instance
-   * @class folio.shared.EventService
+   * @name folio.shared.EventService
+   * @class
    * @constructor
    * @returns {{getEventKeyCode: Function, getEventName: Function, isEarlierThan: Function, isLaterThan: Function, isValidEvent: Function, killEvent: Function}}
    */

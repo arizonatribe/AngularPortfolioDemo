@@ -5,7 +5,8 @@
 
   /**
    * ApiCallHandlerService Javascript class constructor sets default values for certain members and injects dependencies into the constructed instance
-   * @class folio.shared.ApiCallHandlerService
+   * @name folio.shared.ApiCallHandlerService
+   * @class
    * @constructor
    * @returns {{parseCallCollectionName: Function, parseTimeoutName: Function, cancelAll: Function, resetTimeout: Function, addNewCall: Function, callMethodAfterTimeout: Function, callMethodAfterTimeoutPlusCancel: Function, queuedCall: Function, anyUnresolvedRequests: Function, resolveDeferred: Function, rejectDeferred: Function, abortUnresolvedRequests: Function, cleanupFinishedPromises: Function}}
    */

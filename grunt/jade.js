@@ -7,7 +7,8 @@ module.exports = {
     options: {
       data: {
         debug: true
-      }
+      },
+      pretty: true
     },
     files: {
       'public/app/index.html': ['public/app/index.jade'],
@@ -19,7 +20,8 @@ module.exports = {
     options: {
       data: {
         debug: false
-      }
+      },
+      pretty: true
     },
     files: {
       'dist/index.html': ['dist/index.jade'],

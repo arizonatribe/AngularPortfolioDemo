@@ -12,7 +12,8 @@
 
   /**
    * LocalConfig Javascript class constructor sets default values for certain members and injects dependencies into the constructed instance
-   * @class folio.shared.LocalConfig
+   * @name folio.shared.LocalConfig
+   * @class
    * @param {object} $http angular $http service
    * @param {object} $q angular $q service
    * @param {string} configFilePath path to the config.json

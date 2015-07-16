@@ -1,10 +1,11 @@
 ﻿(function() {
     'use strict';
     /**
-     * @name folio.shared
-     * @namespace
+     * Module which holds services and directives that represent cross-cutting concerns (functionality which is not
+     * specific to domain/business logic or any unique component but may be used by many/all of them)
+     * @namespace folio.shared
      */
-    angular.module('folio.shared', ['ng', 'ngRoute', 'hSweetAlert'])
+    angular.module('folio.shared', ['ng', 'LocalStorageModule'])
     /**
      * underscore js library with our custom mixins. This wrapper is for injecting the underscorejs library into a controller, service, etc.
      * @class folio.shared._
@@ -402,7 +403,7 @@
      * @class folio.shared._s
      */
       .factory('_s', ['$window', function($window) {
-          return $window._.str;
+          return $window.s;
       }])
     /**
      * CryptoJS library. This wrapper is for injecting the CryptoJS library into a controller, service, etc.
@@ -412,6 +413,14 @@
           // this is for injecting the underscore.string js library into a controller and aliasing it as something more usable
           return $window.CryptoJS;
       }])
+    /**
+     * Configures dependencies {@link https://github.com/grevory/angular-local-storage|localStorageService},
+     * {@link folio.shared.ApiCallHandlerService|ApiCallHandlerService}, and {@link folio.shared.ErrorHandlingService|ErrorHandlingService}.
+     * Sets the storage type (local vs session) and cookie prefix, sets up the call and timeout
+     * collections to manage in API interactivity, and determines whether or not error handling will allow multiple
+     * errors in the error collection at any given point.
+     * @method folio.shared#config
+     */
       .config(['localStorageServiceProvider', 'apiCallHandlerServiceProvider', 'errorHandlingServiceProvider', function(localStorageServiceProvider, apiCallHandlerServiceProvider, errorHandlingServiceProvider) {
           localStorageServiceProvider.setStorageType('sessionStorage');
           localStorageServiceProvider.setPrefix('app');

@@ -5,7 +5,8 @@
 
   /**
    * StorageService Javascript class constructor sets default values for certain members and injects dependencies into the constructed instance
-   * @class folio.shared.StorageService
+   * @name folio.shared.StorageService
+   * @class
    * @param {object} _ underscore js library with our custom mixins
    * @param {object} _s underscore.string library
    * @param {object} $window angular document wrapper service
