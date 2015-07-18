@@ -35,7 +35,7 @@
     init: function() {
       var $this = this;
 
-      this.accessToken = this.fakeData.generateRandomString(320, 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.-');;
+      this.accessToken = this.fakeData.generateRandomString(320, 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.-');
       this.authToken = {
         timestamp: Math.floor((new Date()).valueOf() / 1000),
         nonce: $this.fakeData.generateRandomString(10),

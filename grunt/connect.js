@@ -5,19 +5,27 @@
 module.exports = {
   test: {
     options: {
-      port: 4000,
+      port: 3000,
       hostname: 'localhost',
       base: 'public/app',
       keepalive: true
     }
   },
-  dev: {
+  devmock: {
     options: {
       port: 3000,
       hostname: 'localhost',
       base: 'public/app',
       keepalive: true,
       livereload: true
+    }
+  },
+  dev: {
+    options: {
+      port: 3000,
+      hostname: 'localhost',
+      base: 'dist',
+      keepalive: true
     }
   }
 };

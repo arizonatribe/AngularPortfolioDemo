@@ -1,17 +1,19 @@
+var filePaths = require('../config/file-paths.json');
+
 /**
  * Converts LESS pre-processed stylesheets into standard CSS. Expects a name to be provided for a new CSS file to create
  * from the LESS source file.
  * @name GruntFile.less
  */
 module.exports = {
-  dev: {
+  devmock: {
     files: {
-      'public/assets/styles/devcss/dev.css': 'public/assets/styles/app.less'
+      'public/app/temp.app.css': filePaths.lessPaths
     }
   },
-  release: {
+  dist: {
     files: {
-      'dist/css/app.min.css': 'public/assets/styles/app.less'
+      'dist/css/app.min.css': filePaths.lessPaths
     }
   }
 };

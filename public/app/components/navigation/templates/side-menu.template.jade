@@ -1,0 +1,10 @@
+.layout-sidebar(ng-show="navbar.showNavMenu")
+    form(name="filterForm")
+    .nav-menu
+        .menu-option
+            span(ng-click="navbar.toggleGroup('borking')") Bork
+            .nav-menu-sub-item(ng-show="navbar.showOptionGroup('borking')") Herschen
+            .nav-menu-sub-item(ng-show="navbar.showOptionGroup('borking')") Berschen
+            .nav-menu-sub-item(ng-show="navbar.showOptionGroup('borking')") Bork Bork
+        .menu-option.link-signoff
+            a(href="#/signoff" ng-click="navbar.signOut()") Sign Out

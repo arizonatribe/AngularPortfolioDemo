@@ -1,3 +1,12 @@
+var filePaths = require('../config/file-paths.json'),
+    devPaths = {},
+    releasePaths = {};
+
+filePaths.jadePaths.forEach(function(path) {
+  devPaths[path.replace('jade', 'html')] = [path];
+  releasePaths[path.replace('jade', 'html').replace('public/app', 'dist')] = [path];
+});
+
 /**
  * Converts Jade templates (Node templating engine) into HTML files.
  * @name GruntFile.jade
@@ -10,11 +19,7 @@ module.exports = {
       },
       pretty: true
     },
-    files: {
-      'public/app/index.html': ['public/app/index.jade'],
-      'public/app/components/login/templates/content.template.html': ['public/app/components/login/templates/content.template.jade'],
-      'public/app/shared/templates/error.template.html': ['public/app/shared/templates/error.template.jade']
-    }
+    files: devPaths
   },
   release: {
     options: {
@@ -23,10 +28,6 @@ module.exports = {
       },
       pretty: true
     },
-    files: {
-      'dist/index.html': ['dist/index.jade'],
-      'dist/components/login/templates/content.template.html': ['public/app/components/login/templates/content.template.jade'],
-      'dist/shared/templates/error.template.html': ['public/app/shared/templates/error.template.jade']
-    }
+    files: releasePaths
   }
 };

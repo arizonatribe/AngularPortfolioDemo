@@ -25,3 +25,14 @@ curl -X POST http://localhost:3030/messages
 curl -G http://localhost:3030/messages
 {"Messages":["rem ut eaque porro ullam qui accusantium dolorum quas qui animi officia sed ..."]}
 ```
+
+## Viewing Documentation
+Due to the way the code is documented throughout the application we can use a Grunt plugin which generates browsable structured documentation. To view this documentation, first enter this command once you're inside the project root folder:
+
+```
+grunt all-documentation
+```
+
+Then, browse to the `docs/code/` folder it just generated and open the __index.html__ page in your web browser.
+
+You should then see the code class structure and detailed descriptions of classes and methods in a navigation pane on the left.

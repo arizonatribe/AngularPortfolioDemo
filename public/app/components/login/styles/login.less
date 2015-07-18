@@ -1,0 +1,185 @@
+@import "../../../shared/styles/variables.less";
+@import "../../../shared/styles/mixins.less";
+/*
+*  Login component Styles
+*/
+
+#login-form-wrapper {
+  width: @login-form-width;
+  height: @login-form-height;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAJ0lEQVQIW2NkYGD4b2xszAADjMbGxv/hPAYGBrjA2bNnGUAqMVQAAD5tCWVpzpWOAAAAAElFTkSuQmCC) repeat;
+  .RoundBorders(8px);
+  .BoxShadow(3px, 3px, 3px, #999);
+  .FullyCentralizeDiv;
+
+  /* Header Styles */
+
+  #login-form-banner {
+    position: absolute;
+    top: 30px;
+    width: 100%;
+    float: left;
+    height: @banner-height;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAJklEQVQIW2P8v8X4P4P9HAYYYPz/+fx/OI+BgQEhcDCFAaQSQwUAgXwRBSV3b/AAAAAASUVORK5CYII=) repeat;
+  }
+
+  /* Form Styles */
+
+  #login-form {
+    clear: both;
+    margin-top: 150px;
+    height: 250px;
+
+    label {
+      width: 120px;
+    }
+
+    input {
+      display: block;
+      width: @field-width;
+      min-height: @field-height;
+      color: @textbox-color;
+    }
+
+    /* Text box, Drop Down and label styles */
+
+    .field.ng-enter {
+      .Transition(all, ease-in, 0.3s);
+      .Opacity();
+      max-height: 0;
+    }
+
+    .field.ng-enter-active {
+      .Opacity(1);
+      max-height: @field-height;
+    }
+
+    .field.ng-leave {
+      .Transition(all, ease-in, 0.3s);
+      .Opacity(1);
+      max-height: @field-height;
+    }
+
+    .field.ng-leave-active {
+      .Opacity();
+      max-height: 0;
+    }
+
+    .field {
+      position: relative;
+      height: @field-height;
+      width: @field-width;
+      margin: 0 auto 20px auto;
+
+      .placeholder-label {
+        position: absolute;
+        top: 12px;
+        left: 12px;
+        font-weight: 300;
+        color: @placeholder-text-color;
+        cursor: text;
+        .Transition;
+      }
+
+      .placeholder-label {
+        z-index: 200;
+      }
+
+      .placeholder-label:after {
+        content: ':';
+        .Opacity();
+        color: @panel-bg-color;
+        .Transition;
+      }
+
+      .placeholder-input {
+        position: absolute;
+        padding: 5px;
+        .RoundBorders(10px);
+        border: 1px solid @contrast-color;
+        font-size: 16px;
+        z-index: 100;
+        .Transition;
+      }
+
+      .placeholder-input:focus,
+      .placeholder-input.not-empty {
+        margin-left: 120px;
+        width: 330px;
+        outline: none;
+      }
+    }
+
+    /* Button Styles */
+
+    .waiting {
+      width: 100%;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    #btn-loading {
+      top: 50%;
+      left: 50%;
+      position: absolute;
+      height: @field-height;
+      width: @field-height;
+      background-color: transparent;
+    }
+    .btn-loading {
+      border: none;
+      outline: none;
+      cursor: initial;
+    }
+
+    .buttons-wrapper {
+      text-align: right;
+    }
+
+    .buttons {
+      width: @field-width;
+      margin: 10px auto;
+
+      #btn-clear {
+        margin-right: 20px;
+      }
+
+      #btn-login-loading {
+        margin-right: 20px;
+        width: @field-height;
+        height: @field-height;
+        background-color: transparent;
+      }
+
+      .btn-main {
+        color: #888;
+        font-size: 20px;
+        width: @button-width;
+        height: @field-height;
+        cursor: pointer;
+        padding: 0;
+        background-color: lighten(@panel-bg-color, 5%);
+        border: 1px solid lighten(@panel-bg-color, 2%);
+
+        .RoundBorders(10px);
+        .BoxShadowInset(lighten(@panel-bg-color, 15%));
+        .Transition;
+
+        &:hover {
+          background-color: @body-bg-color;
+          .BoxShadowInset(rgba(0,0,0,0.4));
+        }
+
+        &:disabled {
+          background-color: lighten(@panel-bg-color, 15%);
+          border: 1px solid darken(@body-bg-color, 20%);
+          cursor: initial;
+        }
+
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+  }
+}

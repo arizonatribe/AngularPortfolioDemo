@@ -9,7 +9,7 @@ module.exports = {
   docs: ['docs/*'],
   jade: ['dist/**/*.jade'],
   less: ['dist/**/*.less'],
-  devcss: ['public/assets/styles/devcss/**/*.css'],
+  devcss: ['public/app/**/*.css', '!**/bower_components/**'],
   devhtml: ['public/app/**/*.html'],
-  devconfig: ['public/assets/config/config.json']
+  devconfig: ['public/app/**/*.json']
 };

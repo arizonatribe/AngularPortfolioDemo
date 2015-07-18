@@ -7,7 +7,7 @@
        * @name folio.shared.configFilePath
        * @type {string}
        */
-      .constant('configFilePath', 'assets/config/config.json')
+      .constant('configFilePath', 'temp.config.json')
       .factory('localConfig', ['$http', '$q', 'configFilePath', 'errorHandlingService', LocalConfig]);
 
   /**

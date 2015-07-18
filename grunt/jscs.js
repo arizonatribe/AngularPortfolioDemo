@@ -5,8 +5,19 @@ var filePaths = require('../config/file-paths.json');
  * @name GruntFile.jscs
  */
 module.exports = {
-  src: filePaths.testPaths.concat(filePaths.codePathsVerbose.concat(['GruntFile.js', 'grunt/**'])),
   options: {
     config: true
+  },
+  test: {
+    src: ['!**/bower_components/**'].concat(filePaths.testPaths.concat(filePaths.mockPaths))
+  },
+  code: {
+    src: ['!**/bower_components/**'].concat(filePaths.codePathsVerbose)
+  },
+  server: {
+    src: ['server/**/*.js']
+  },
+  ops: {
+    src: ['Gruntfile.js', 'grunt/**/*.js']
   }
 };

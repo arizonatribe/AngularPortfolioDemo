@@ -18,7 +18,7 @@ module.exports = {
     dest: 'dist/js/vendor.min.js'
   },
   distappcss: {
-    src: 'public/app/assets/styles/devcss/dev.css',
+    src: 'public/app/temp/app.css',
     dest: 'dist/css/app.min.css'
   },
   distvendorcss: {

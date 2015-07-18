@@ -11,46 +11,44 @@ module.exports = {
     livereload: true
   },
 
-  // for stylesheets, watch css and less files
-  // only run less and cssmin stylesheets:
   css: {
-    files: ['public/assets/styles//*.css'],
-    tasks: ['concat:distappcss', 'concat:distvendorcss']
+    files: ['public/app/**/*.css', '!**/bower_components/**'],
+    tasks: ['concat:distappcss']
   },
 
   less: {
-    files: 'public/assets/styles//*.less',
-    tasks: ['less:dev']
+    files: ['public/app/**/*.less', 'config/file-paths.json'],
+    tasks: ['less']
   },
 
-  // for scripts, run jshint and uglify
+  // for scripts, run jshint, jscs, and uglify
   scripts: {
-    files: ['public/app/components/**/*.js', 'public/app/shared/**/*.js', 'public/app/config.module.js'],
-    tasks: ['jshint', 'concat:distapp', 'concat:distvendor']
+    files: ['public/app/components/**/*.js', 'public/app/shared/**/*.js', 'public/app/config.module.js', 'config/file-paths.json'],
+    tasks: ['jshint:code', 'jscs:code', 'concat:distapp']
   },
 
   jade: {
-    files: 'public/app/**/*.jade',
+    files: ['public/app/**/*.jade', 'config/file-paths.json'],
     tasks: ['jade:dev']
   },
 
   config: {
     files: 'config/config-dev.json',
-    tasks: ['copy:dev']
+    tasks: ['copy:dev', 'copy:devmock']
   },
 
   server: {
-    files: ['server/**.*.js', 'config/express.js', 'config/socketio.js', 'config/mock-server.js'],
-    tasks: ['express:dev']
+    files: ['server/**.*.js', 'server/**.*.json', 'config/express.js', 'config/socketio.js', 'config/mock-server.js'],
+    tasks: ['jshint:server', 'jscs:server']
   },
 
   tests: {
-    files: ['public/app/**.test.js', 'config/unit-test.fake-data.js'],
-    tasks: ['jshint', 'karma']
+    files: ['public/app/**.test.js', 'config/tests/**/*.js', 'config/file-paths.json'],
+    tasks: ['jshint:test', 'jscs:test', 'karma']
   },
 
   protractor: {
-    files: ['e2e-tests/**/*scenario.js'],
+    files: ['e2e-tests/**/*.scenario.js'],
     tasks: ['protractor:continuous']
   }
 };

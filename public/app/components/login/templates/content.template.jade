@@ -1,9 +1,6 @@
 .container#login-form-container
     #login-form-wrapper(role="main")
-        error-message-handler
-        auth-redirect(url="loginCtrl.redirectTo", ng-if="loginCtrl.redirectTo")
-        .header#login-form-logo
-            .header-logo#header-logo
+        #login-form-banner
         form#login-form(name="loginForm", ng-submit="loginCtrl.signIn()")
             .authentication-fields(ng-show="!loginCtrl.showEmail()")
                 .field(ng-repeat="txt in ['username', 'password']", id="{{ txt }}-wrapper")
@@ -11,5 +8,4 @@
                     input.placeholder-input(ng-class="{ 'not-empty': loginForm[txt].$viewValue }", ng-model="loginCtrl.model[txt].value", id="txt-{{ txt }}" name="{{ txt }}", type="{{ txt === 'password' ? txt : 'text' }}" value="", ng-pattern="loginCtrl.model[txt].validations.pattern", ng-minlength="loginCtrl.model[txt].validations.minLength", ng-maxlength="loginCtrl.model[txt].validations.maxLength", required)
                 .buttons.buttons-wrapper
                     button#btn-clear.btn-main(type="button", ng-disabled="!loginForm.password.$viewValue && !loginForm.username.$viewValue && !loginCtrl.model.realm.value", ng-click="loginCtrl.resetModel()", ng-bind="loginCtrl.loginLoading ? 'Cancel' : 'Clear'")
-                    button#btn-sign-in.btn-main(ladda="loginCtrl.loginLoading", data-style="zoom-out", type="submit", ng-disabled="loginForm.$invalid") Sign In
-        .red-divider#footer-divider
+                    button#btn-sign-in.btn-main(type="submit", ng-disabled="loginForm.$invalid") Sign In

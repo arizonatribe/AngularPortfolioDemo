@@ -6,7 +6,7 @@
 
     beforeEach(function() {
       module('components/login/templates/content.template.html');
-      module('shared/templates/error.template.html');
+      module('components/error/templates/error.template.html');
       module('folio.unit-testing.fakeData');
       module('folio.shared');
       module('folio.auth');

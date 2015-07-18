@@ -9,8 +9,14 @@ module.exports = {
       logConcurrentOutput: true
     }
   },
+  devmock: {
+    tasks: ['connect:devmock', 'nodemon:dev', 'watch'],
+    options: {
+      logConcurrentOutput: true
+    }
+  },
   tests: {
-    tasks: ['connect:test', 'nodemon:dev', 'express:dist', 'protractor:e2e'],
+    tasks: ['connect:test', 'nodemon:dev', 'protractor:e2e'],
     options: {
       logConcurrentOutput: true
     }

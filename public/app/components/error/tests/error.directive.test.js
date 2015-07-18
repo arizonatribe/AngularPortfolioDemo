@@ -12,8 +12,7 @@
               $scope.$digest();
             };
 
-    beforeEach(module('folio.shared'));
-    beforeEach(module('shared/templates/error.template.html'));
+    beforeEach(module('components/error/templates/error.template.html'));
 
     beforeEach(inject(function(_errorHandlingService_, $injector, _$rootScope_) {
       $rootScope = _$rootScope_;

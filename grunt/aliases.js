@@ -12,7 +12,8 @@ module.exports = {
    * <ul>
    * <li>{@link GruntFile.clean}</li>
    * <li>{@link GruntFile.uglify}</li>
-   * <li>{@link GruntFile.less}:release</li>
+   * <li>{@link GruntFile.string-replace}:release</li>
+   * <li>{@link GruntFile.less}:dist</li>
    * <li>{@link GruntFile.cssmin}</li>
    * <li>{@link GruntFile.copy}</li>
    * <li>{@link GruntFile.jadeUsemin}</li>
@@ -25,7 +26,8 @@ module.exports = {
   default: [
       'clean',
       'uglify',
-      'less:release',
+      'string-replace:release',
+      'less:dist',
       'cssmin',
       'copy:prod',
       'jadeUsemin',
@@ -41,12 +43,14 @@ module.exports = {
    * <li>{@link GruntFile.concat}:distapp</li>
    * <li>{@link GruntFile.concat}:distvendor</li>
    * <li>{@link GruntFile.concat}:distvendorcss</li>
-   * <li>{@link GruntFile.less}</li>
+   * <li>{@link GruntFile.less}:dist</li>
+   * <li>{@link GruntFile.cssmin}</li>
    * <li>{@link GruntFile.copy}:dev</li>
    * <li>{@link GruntFile.jadeUsemin}</li>
    * <li>{@link GruntFile.jade}:release</li>
    * <li>{@link GruntFile.clean}:jade</li>
    * <li>{@link GruntFile.clean}:less</li>
+   * <li>{@link GruntFile.concurrent}:dev</li>
    * </ul>
    * @name GruntFile.tasks#dev
    */
@@ -55,12 +59,14 @@ module.exports = {
       'concat:distapp',
       'concat:distvendor',
       'concat:distvendorcss',
-      'less',
+      'less:dist',
+      'cssmin',
       'copy:dev',
       'jadeUsemin',
       'jade',
       'clean:jade',
-      'clean:less'
+      'clean:less',
+      'concurrent:dev'
   ],
   /**
    * The sequence of "dev" tasks that also run a mock server of the APIs for a self-contained development
@@ -70,10 +76,10 @@ module.exports = {
    * <li>{@link GruntFile.clean}:devcss</li>
    * <li>{@link GruntFile.clean}:devhtml</li>
    * <li>{@link GruntFile.clean}:devconfig</li>
-   * <li>{@link GruntFile.less}:dev</li>
+   * <li>{@link GruntFile.less}:devmock</li>
    * <li>{@link GruntFile.copy}:devmock</li>
    * <li>{@link GruntFile.jade}:dev</li>
-   * <li>{@link GruntFile.concurrent:dev}</li>
+   * <li>{@link GruntFile.concurrent}:devmock</li>
    * </ul>
    * @name GruntFile.tasks#devmock-full
    */
@@ -81,16 +87,16 @@ module.exports = {
       'clean:devcss',
       'clean:devhtml',
       'clean:devconfig',
-      'less:dev',
+      'less:devmock',
       'copy:devmock',
       'jade:dev',
-      'concurrent:dev'
+      'concurrent:devmock'
   ],
   /**
    * Converts code-comments to HTML pages in a user-friendly API doc, and also converts markdown files for general
    * instructions on the project into distributable PDFs.
    * <ul>
-   * <li>{@link GruntFile.markdownpdf}:dev</li>
+   * <li>{@link GruntFile.markdownpdf}</li>
    * <li>{@link GruntFile.jsdoc-ng}</li>
    * </ul>
    * @name GruntFile.tasks#all-documentation
@@ -102,27 +108,27 @@ module.exports = {
   /**
    * The sequence of "test" tasks that perform unit testing, end-to-end testing, linting, and javascript style checking.
    * <ul>
-   * <li>{@link GruntFile.jshint}</li>
-   * <li>{@link GruntFile.jscs}</li>
+   * <li>{@link GruntFile.jshint}:test</li>
+   * <li>{@link GruntFile.jscs}:test</li>
    * <li>{@link GruntFile.karma}</li>
    * <li>{@link GruntFile.clean}:devcss</li>
    * <li>{@link GruntFile.clean}:devhtml</li>
    * <li>{@link GruntFile.clean}:devconfig</li>
-   * <li>{@link GruntFile.less}:dev</li>
+   * <li>{@link GruntFile.less}:devmock</li>
    * <li>{@link GruntFile.copy}:devmock</li>
    * <li>{@link GruntFile.jade}:dev</li>
-   * <li>{@link GruntFile.concurrent:tests}</li>
+   * <li>{@link GruntFile.concurrent}:tests</li>
    * </ul>
    * @name GruntFile.tasks#tests
    */
   tests: [
-    'jshint',
-    'jscs',
+    'jshint:test',
+    'jscs:test',
     'karma',
     'clean:devcss',
     'clean:devhtml',
     'clean:devconfig',
-    'less:dev',
+    'less:devmock',
     'copy:devmock',
     'jade:dev',
     'concurrent:tests'

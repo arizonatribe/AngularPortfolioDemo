@@ -14,7 +14,7 @@
   function ErrorMessageHandlerDirective() {
     return {
       restrict: 'E',
-      templateUrl: 'shared/templates/error.template.html',
+      templateUrl: 'components/error/templates/error.template.html',
       controllerAs: 'errorCtrl',
       controller: 'ErrorController',
       bindToController: true

@@ -1,0 +1,5 @@
+header
+side-menu
+.layout-main-content(ng-class="{ 'slide-layout-right': navbar.showNavMenu, 'slide-layout-left': !navbar.showNavMenu }", resize-content="navbar.showNavMenu")
+   nav-toggle-button(ng-model="navbar.showNavMenu")
+   error-message-handler

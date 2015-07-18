@@ -8,7 +8,7 @@
     beforeEach(module('folio.shared'));
 
     beforeEach(module(function($provide) {
-      $provide.value('configPath', 'assets/config/config.json');
+      $provide.value('configPath', 'temp.config.json');
     }));
 
     beforeEach(inject(function($injector, _$httpBackend_, _localConfig_, _fakeData_, _configPath_, _$rootScope_) {

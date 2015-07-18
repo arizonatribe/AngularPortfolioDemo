@@ -10,17 +10,26 @@
    * @method folio.config#config
    */
    .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
-        $urlRouterProvider.otherwise('/login');
+        $urlRouterProvider.otherwise('/');
 
-        $stateProvider.state('login', {
-          url: '/login',
-          views: {
-            content: {
-              templateUrl: 'components/login/templates/content.template.html',
-              controller: 'LoginController',
-              controllerAs: 'loginCtrl'
+        $stateProvider
+          .state('login', {
+            url: '/login',
+            views: {
+              content: {
+                templateUrl: 'components/login/templates/content.template.html',
+                controller: 'LoginController',
+                controllerAs: 'loginCtrl'
+              }
             }
-          }
-        });
+          })
+          .state('/', {
+            url: '/',
+            views: {
+              layout: {
+                templateUrl: 'components/navigation/templates/layout.template.html'
+              }
+            }
+          });
       }]);
 })();

@@ -11,11 +11,11 @@ html(lang="en")
         link(rel="stylesheet", href="bower_components/html5-boilerplate/css/main.css")
         //-<!-- endbuild -->
         //-<!-- build:css css/app.min.css -->
-        link(rel="stylesheet", href="assets/styles/devcss/dev.css")
+        link(rel="stylesheet", href="temp.app.css")
         //-<!-- endbuild -->
         script(type="text/javascript", socket-hub-link)
     body
-        div(ui-view="content")
+        div(ui-view="layout")
         //-<!-- build:js js/vendor.min.js -->
         script(src="bower_components/angular/angular.js")
         script(src="bower_components/cryptojslib/rollups/aes.js")
@@ -27,9 +27,11 @@ html(lang="en")
         //-<!-- endbuild -->
         //-<!-- build:js js/app.min.js -->
         script(src="shared/shared.module.js")
+        script(src="components/error/error.module.js")
         script(src="components/login/login.module.js")
+        script(src="components/navigation/navigation.module.js")
         script(src="shared/shared.config.js")
-        script(src="shared/error.service.js")
+        script(src="components/error/error.service.js")
         script(src="shared/validation.service.js")
         script(src="shared/url.service.js")
         script(src="shared/storage.service.js")
@@ -39,6 +41,8 @@ html(lang="en")
         script(src="components/login/auth.store.js")
         script(src="components/login/auth.service.js")
         script(src="components/login/login.controller.js")
-        script(src="shared/error.directive.js")
+        script(src="components/error/error.directive.js")
+        script(src="components/navigation/navigation.side-menu.directive.js")
+        script(src="components/navigation/navigation.toggle-button.directive.js")
         script(src="config.module.js")
         //-<!-- endbuild -->

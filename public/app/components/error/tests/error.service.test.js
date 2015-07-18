@@ -4,8 +4,6 @@
   describe('[Error Handling Service]', function() {
     var errorHandlingService, _;
 
-    beforeEach(module('folio.shared'));
-
     beforeEach(inject(function(_errorHandlingService_, $injector) {
       errorHandlingService = _errorHandlingService_;
       _ = $injector.get('_');

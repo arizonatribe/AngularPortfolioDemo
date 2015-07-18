@@ -1,0 +1,149 @@
+@import "variables.less";
+
+.RoundBorders (@radius) {
+  border-radius: @radius;
+  -moz-border-radius: @radius;
+  -webkit-border-radius: @radius;
+}
+
+.RoundTopBorders (@radius) {
+  border-top-left-radius: @radius;
+  -moz-border-top-left-radius: @radius;
+  -webkit-border-top-left-radius: @radius;
+  border-top-right-radius: @radius;
+  -moz-border-top-right-radius: @radius;
+  -webkit-border-top-right-radius: @radius;
+}
+
+.RoundBottomBorders (@radius) {
+  border-bottom-left-radius: @radius;
+  -moz-border-bottom-left-radius: @radius;
+  -webkit-border-bottom-left-radius: @radius;
+  border-bottom-right-radius: @radius;
+  -moz-border-bottom-right-radius: @radius;
+  -webkit-border-bottom-right-radius: @radius;
+}
+
+.BoxShadowInset(@x: 0, @y: 0, @blur: 12px, @color: @panel-bg-color) {
+  box-shadow: inset @arguments;
+  -moz-box-shadow: inset @arguments;
+  -webkit-box-shadow: inset @arguments;
+}
+
+.BoxShadowInset(@color: @panel-bg-color) {
+  box-shadow: inset 0 0 12px @color;
+  -moz-box-shadow: inset 0 0 12px @color;
+  -webkit-box-shadow: inset 0 0 12px @color;
+}
+
+.BoxShadow(@x: 0, @y: 0, @blur: 12px, @color: @panel-bg-color) {
+  box-shadow: @arguments;
+  -moz-box-shadow: @arguments;
+  -webkit-box-shadow: @arguments;
+}
+
+.BoxShadow(@color: @panel-bg-color) {
+  box-shadow: 0 0 12px @color;
+  -moz-box-shadow: 0 0 12px @color;
+  -webkit-box-shadow: 0 0 12px @color;
+}
+
+.BoxShadowInsetOutset (@inset-x: 0, @inset-y: 0, @inset-blur: 12px, @inset-color: @panel-bg-color, @x: 0, @y: 0, @blur: 12px, @color: @panel-bg-color) {
+  box-shadow: inset @arguments;
+  -moz-box-shadow: inset @arguments;
+  -webkit-box-shadow: inset @arguments;
+}
+
+.HorizontalGradient (@color1: @body-bg-color, @color2: @panel-bg-color) {
+  background-image: -webkit-linear-gradient(top,@color1 0,@color2 100%);
+  background-image: -o-linear-gradient(top,@color1 0,@color2 100%);
+  background-image: -webkit-gradient(linear,left top,left bottom,from(@color1),to(@color2));
+  background-image: linear-gradient(to bottom,@color1 0,@color2 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=@color1, endColorstr=@color2, GradientType=0);
+  background-repeat: repeat-x;
+}
+
+.VerticalGradient (@color1: @body-bg-color, @color2: @panel-bg-color) {
+  background-image: -webkit-linear-gradient(top,@color1 0,@color2 100%);
+  background-image: -o-linear-gradient(top,@color1 0,@color2 100%);
+  background-image: -webkit-gradient(linear,left top,left bottom,from(@color1),to(@color2));
+  background-image: linear-gradient(to bottom,@color1 0,@color2 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=@color1, endColorstr=@color2, GradientType=0);
+  background-repeat: repeat-y;
+}
+
+.FullyCentralizeDiv {
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.FullSizeDiv {
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+}
+
+.Transition(@cssProperty: all, @timing: ease-in, @duration: 0.25s) {
+  -webkit-transition: @arguments;
+  -moz-transition: @arguments;
+  transition: @arguments;
+  -o-transition: @arguments;
+}
+
+.TransitionDelay(@duration: 0.25s) {
+  -webkit-transition-delay: @duration;
+  -moz-transition-delay: @duration;
+  transition-delay: @duration;
+  -o-transition-delay: @duration;
+}
+
+.TranslateX(@distance: 10px) {
+  -webkit-transform: translateX(@distance);
+  -moz-transform: translateX(@distance);
+  -ms-transform: translateX(@distance);
+  transform: translateX(@distance);
+  -o-transform: translateX(@distance);
+}
+
+.TranslateY(@distance: 10px) {
+  -webkit-transform: translateY(@distance);
+  -moz-transform: translateY(@distance);
+  -ms-transform: translateY(@distance);
+  transform: translateY(@distance);
+  -o-transform: translateY(@distance);
+}
+
+.Scale(@amount: 1) {
+  -webkit-transform: scale(@amount);
+  -moz-transform: scale(@amount);
+  -ms-transform: scale(@amount);
+  transform: scale(@amount);
+  -o-transform: scale(@amount);
+}
+
+.BoxSizing(@sizing: border-box) {
+  -webkit-box-sizing: @sizing;
+  -moz-box-sizing: @sizing;
+  box-sizing: @sizing;
+}
+
+.NoAppearance {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+
+.Opacity(@opacity: 0) {
+  -webkit-opacity: @opacity;
+  -moz-opacity: @opacity;
+  opacity: @opacity;
+}
+
+.header-wrap {
+  word-wrap: break-word;
+  overflow: hidden;
+}

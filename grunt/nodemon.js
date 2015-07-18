@@ -17,7 +17,7 @@ module.exports = {
           // Delay before server listens on port
           setTimeout(function() {
             require('open')('http://localhost:3000');
-          }, 1000);
+          }, 750);
         });
 
         // refreshes browser when server reboots
@@ -25,11 +25,11 @@ module.exports = {
           // Delay before server listens on port
           setTimeout(function() {
             require('fs').writeFileSync('.rebooted', 'rebooted');
-          }, 1000);
+          }, 750);
         });
       },
-      watch: ['server'],
-      delay: 1000,
+      watch: ['server', 'config/express.js', 'config/socketio.js', 'config/mock-server.js'],
+      delay: 750,
       env: {
         PORT: '3030',
         NODE_ENV: 'development'

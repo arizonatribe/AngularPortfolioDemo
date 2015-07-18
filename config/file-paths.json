@@ -12,19 +12,23 @@
 	],
 	"codePathsVerbose": [
 	  "public/app/shared/shared.module.js",
+	  "public/app/components/error/error.module.js",
 	  "public/app/components/login/login.module.js",
+	  "public/app/components/navigation/navigation.module.js",
 	  "public/app/shared/shared.config.js",
 	  "public/app/shared/api-call-handler.service.js",
 	  "public/app/shared/event.service.js",
 	  "public/app/shared/local-config.service.js",
 	  "public/app/shared/storage.service.js",
-	  "public/app/shared/error.service.js",
+	  "public/app/components/error/error.service.js",
 	  "public/app/shared/validation.service.js",
-	  "public/app/shared/error.directive.js",
+	  "public/app/components/error/error.directive.js",
 	  "public/app/shared/url.service.js",
 	  "public/app/components/login/auth.store.js",
 	  "public/app/components/login/auth.service.js",
 	  "public/app/components/login/login.controller.js",
+	  "public/app/components/navigation/navigation.side-menu.directive.js",
+	  "public/app/components/navigation/navigation.toggle-button.directive.js",
 	  "public/app/config.module.js"
 	],
     "mockPaths": [
@@ -46,7 +50,7 @@
 		"public/app/shared/tests/config.module.test.js",
 		"public/app/shared/tests/shared.module.test.js",
 	  	"public/app/shared/tests/shared.config.test.js",
-		"public/app/shared/tests/error.service.test.js",
+		"public/app/components/error/tests/error.service.test.js",
 		"public/app/shared/tests/local-config.service.test.js",
 		"public/app/shared/tests/storage.service.test.js",
 		"public/app/shared/tests/validation.service.test.js",
@@ -72,13 +76,18 @@
         "public/app/bower_components/angular-mocks/angular-mocks.js"
     ],
 	"jadePaths": [
-		"public/app/**/*.jade"
+		"public/app/components/login/templates/content.template.jade",
+		"public/app/components/navigation/templates/layout.template.jade",
+		"public/app/components/navigation/templates/side-menu.template.jade",
+		"public/app/components/navigation/templates/toggle-button.template.jade",
+		"public/app/components/error/templates/error.template.jade",
+	  	"public/app/index.jade"
 	],
-	"assetPaths": [
-		"public/assets/img/**/*.*"
+	"fontPaths": [
+		"public/app/shared/fonts/**/*.*"
 	],
 	"lessPaths": [
-		"public/assets/styles/**/*.less"
+		"public/app/**/*.less"
 	],
     "vendorCssPaths": [
         "public/app/bower_components/html5-boilerplate/css/normalize.css",

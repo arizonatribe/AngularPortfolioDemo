@@ -1,0 +1,81 @@
+@import "../../../shared/styles/mixins.less";
+
+/* Error Handler Styles */
+
+.login-validation-summary-errors {
+  z-index: 10;
+  margin: 0 auto;
+  width: 100%;
+  position: absolute;
+  top: 30px;
+
+  &.ng-enter,
+  &.ng-leave {
+    .Transition;
+  }
+  &.ng-enter {
+    .Opacity();
+  }
+  &.ng-enter-active {
+    .Opacity(1);
+  }
+  &.ng-leave {
+    .Opacity(1);
+  }
+  &.ng-leave-active {
+    .Opacity();
+  }
+
+  .validation-summary-errors {
+    max-width: @login-form-width;
+    max-height: @banner-height;
+    margin: 0 auto;
+
+    .alert {
+      height: @banner-height;
+      padding: 15px;
+      border: 1px solid transparent;
+      text-shadow: 0 1px 0 rgba(255, 255, 255, .2);
+      .RoundBorders(0);
+      .BoxShadowInsetOutset(0, 1px, 0, rgba(255, 255, 255, .25), 0, 1px, 2px, rgba(0, 0, 0, .05));
+    }
+
+    .alert-danger {
+      color: #a94442;
+      background-color: @error-red;
+      .HorizontalGradient(@error-red,#e7c3c3);
+      border-color: #dca7a7;
+      .Transition();
+    }
+
+    .alert-warning {
+      color: #8a6d3b;
+      background-color: @warning-yellow;
+
+      .HorizontalGradient(@warning-yellow,#f8efc0);
+      border-color: #f5e79e;
+    }
+
+    .alert-dismissable .close {
+      color: inherit;
+
+      padding: 0;
+      cursor: pointer;
+      background: transparent;
+      border: 0;
+      -webkit-appearance: none;
+
+      float: right;
+      right: 20px;
+      font-size: 20px;
+      font-weight: bold;
+      line-height: 20px;
+      text-shadow: 0 1px 0 #ffffff;
+      .Opacity(0.2);
+    }
+
+    .alert-dismissable .close .sr-only {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,128 @@
+@import "../../../shared/styles/variables.less";
+@import "../../../shared/styles/mixins.less";
+
+.layout-main-content {
+  background-color: @body-bg-color;
+  .FullSizeDiv();
+  position: relative;
+  top: @banner-height;
+}
+
+/* Side Navigation Menu pane Styles */
+
+.layout-sidebar::-webkit-scrollbar {
+  display: none;
+}
+
+.layout-sidebar {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAJ0lEQVQIW2NkYGD4b2xszAADjMbGxv/hPAYGBrjA2bNnGUAqMVQAAD5tCWVpzpWOAAAAAElFTkSuQmCC) repeat;
+  width: 255px;
+  height: 100%;
+  position: fixed;
+  top: @banner-height;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+  overflow-y: scroll;
+  .Transition(all, ease-in, 0.1s);
+
+  .nav-menu {
+    display: block;
+    margin-top: 2em;
+    margin-left: 1em;
+
+    .link-signoff a:before,  {
+      font-family: 'icomoon', monospace;
+      content: "\ea14";
+      padding-right: 5px;
+      cursor: initial;
+    }
+
+    .menu-option {
+      width: 215px;
+      color: white;
+      opacity: 0.6;
+      cursor: pointer;
+
+      span {
+        font-size: 120%;
+      }
+
+      a {
+        display: block;
+        padding-top: 0.3em;
+        color: white;
+        text-decoration: none;
+        font-size: 120%;
+      }
+
+      .nav-menu-sub-item.ng-hide {
+        padding-top: 0;
+        padding-bottom: 0;
+      }
+
+      .nav-menu-sub-item.ng-hide-add {
+        display: block !important;
+      }
+
+      .nav-menu-sub-item {
+        color: white;
+        .Transition(all, linear, 0.09s);
+      }
+
+      .nav-menu-sub-item {
+        margin: 5px 0 5px 15px;
+        width: 200px;
+        .RoundBorders(3px);
+        padding: 2px;
+        display: block;
+      }
+    }
+  }
+}
+
+/* Slide Navigation pane Styles */
+
+.close-navigation-trigger, .navigation-trigger,
+.slide-layout-left, .slide-layout-right {
+  .Transition(left, ease-in, 0.1s);
+}
+
+.slide-layout-right-remove, .navigation-trigger-add,
+.close-navigation-trigger-remove, .slide-layout-left-add {
+  left: 120px;
+}
+
+.slide-layout-right, .navigation-trigger {
+  left: 250px;
+}
+
+.close-navigation-trigger, .slide-layout-left {
+  left: 0;
+}
+
+/* Navigation menu Button Styles */
+
+#nav-toggle {
+  position: fixed;
+  top: @banner-height;
+
+  button.nav-toggle {
+    background-color: transparent;
+    border: none;
+    outline: none;
+
+    &:hover {
+      background-color: transparent;
+    }
+
+    &:after, {
+      font-family: 'icomoon', monospace;
+      content: "\e9bd";
+      color: @sidebar-bg-color;
+      cursor: pointer;
+      font-size: 25px;
+    }
+  }
+}
