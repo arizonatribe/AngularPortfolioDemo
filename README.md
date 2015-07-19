@@ -2,37 +2,33 @@
 This is a simple demonstration of a website with basic features and navigation written in AngularJS and leveraging Node for simulating real APIs.
 
 ## Instructions
-This demo is under construction, however currently the express.js server is functional and the API endpoints will respond properly.
 For quick demonstration purposes and for easier installation, there is currently no true data store but rather singleton caches local to each `.service.js` in the `server\services` directory.
 
-To launch the mock server for testing the endpoints, first run the following command from the locally installed/clone project folder to install all the third-party dependencies:
+After you've installed both [Node](https://nodejs.org/) and [Git](https://git-scm.com/), you can clone this project (make sure you're in a directory where it's okay to create this project):
 
 ```
-npm install
+git clone https://github.com/arizonatribe/AngularPortfolioDemo.git
 ```
 
-Then run the following command to start up the server:
+Next, change from your current directory to the newly created `AngularPortfolioDemo/` project root folder:
 
 ```
-grunt devmock
+cd AngularPortfolioDemo/
 ```
 
-Now you can attempt to send requests to the mock server:
+Now, you can launch the project by issuing the following command:
 
 ```
-curl -X POST http://localhost:3030/messages
->> rem ut eaque porro ullam qui accusantium dolorum quas qui animi officia sed ...
-curl -G http://localhost:3030/messages
-{"Messages":["rem ut eaque porro ullam qui accusantium dolorum quas qui animi officia sed ..."]}
+npm start
 ```
+
+This single command runs a chain of commands which take care of installing all 3rd-party dependencies used in the project and then launches the application in a locally-hosted Node server. View the `scripts` block in the project's `package.json` file to see the commands it runs __prestart__ and __postinstall__.
 
 ## Viewing Documentation
-Due to the way the code is documented throughout the application we can use a Grunt plugin which generates browsable structured documentation. To view this documentation, first enter this command once you're inside the project root folder:
+Due to the way the code is documented throughout the application we can extract structured documentation into a browsable, styled, local HTML page. To create this documentation and view it in your web browser, issue the following command (make sure you're in the root `AngularPortfolioDemo/` folder for this project you cloned):
 
 ```
-grunt all-documentation
+npm run docs
 ```
 
-Then, browse to the `docs/code/` folder it just generated and open the __index.html__ page in your web browser.
-
-You should then see the code class structure and detailed descriptions of classes and methods in a navigation pane on the left.
+You should then see the code class structure and detailed descriptions of classes and methods in a navigation pane on the left. All the build automation tasks (Grunt) will be viewable as well.
