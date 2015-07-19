@@ -98,12 +98,14 @@ module.exports = {
    * <ul>
    * <li>{@link GruntFile.markdownpdf}</li>
    * <li>{@link GruntFile.jsdoc-ng}</li>
+   * <li>{@link GruntFile.open-code-docs}</li>
    * </ul>
    * @name GruntFile.tasks#all-documentation
    */
   'all-documentation': [
       'markdownpdf',
-      'jsdoc-ng'
+      'jsdoc-ng',
+      'open-code-docs'
   ],
   /**
    * The sequence of "test" tasks that perform unit testing, end-to-end testing, linting, and javascript style checking.
