@@ -24,7 +24,7 @@ module.exports = {
         nodemon.on('restart', function() {
           // Delay before server listens on port
           setTimeout(function() {
-            require('fs').writeFileSync('.rebooted', 'rebooted');
+            require('fs').writeFileSync('.rebooted', 'rebooted ' + new Date());
           }, 750);
         });
       },

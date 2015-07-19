@@ -12,7 +12,7 @@ module.exports = {
    * <ul>
    * <li>{@link GruntFile.clean}</li>
    * <li>{@link GruntFile.uglify}</li>
-   * <li>{@link GruntFile.string-replace}:release</li>
+   * <li>{@link GruntFile.string-replace}</li>
    * <li>{@link GruntFile.less}:dist</li>
    * <li>{@link GruntFile.cssmin}</li>
    * <li>{@link GruntFile.copy}</li>
@@ -26,7 +26,7 @@ module.exports = {
   default: [
       'clean',
       'uglify',
-      'string-replace:release',
+      'string-replace',
       'less:dist',
       'cssmin',
       'copy:prod',
