@@ -119,18 +119,6 @@
                       refreshTokenTimeout: response.data.refresh_token_expires_in,
                       tokenTimeout: response.data.expires_in
                     })) {
-                      // Retrieve any claims associated with this authenticated user
-                      if ($this._.isArray(response.data.claims)) {
-                        $this._.chain(response.data.claims)
-                          .pluck('Type')
-                          .filter($this._.isString)
-                          .reject($this._s.isBlank)
-                                        .tap(function(claims) {
-                                          apiResponse.ClaimsField = claims;
-                                        })
-                                        .value();
-                      }
-
                       // Send back any warnings
                       if (response.data.warning) {
                         if ($this._.isString(response.data.warning)) {

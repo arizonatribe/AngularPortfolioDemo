@@ -1,15 +1,16 @@
 var utilities = require('../services/utilities.js'),
+    authService = require('../services/auth.service.js'),
 	_ = require('underscore');
 
 exports.signIn = function(req, res, next) {
   console.log('signing in');
   utilities.setHeaders(res);
 
-  var errorMessages = utilities.validateToken(req);
+  var errorMessages = authService.validateToken(req);
 
   if (!errorMessages.length) {
     res.send({
-      access_token: utilities.getUser(req).access_token,
+      access_token: authService.getUser(req).access_token,
       refresh_token: utilities.generateUUID(),
       refresh_token_expires_in: 900,
       token_type: 'Bearer'

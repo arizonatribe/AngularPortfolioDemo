@@ -1,11 +1,11 @@
-.container#login-form-container
+a(href="#/signoff" ng-click="navbar.toggleGroup('login') && loginCtrl.signOutIfSignedIn()", ng-bind="loginCtrl.authStore.isAuthenticated() ? 'Sign Out' : 'Sign In'")
+#login-form-container
     #login-form-wrapper(role="main")
-        #login-form-banner
         form#login-form(name="loginForm", ng-submit="loginCtrl.signIn()")
-            .authentication-fields(ng-show="!loginCtrl.showEmail()")
-                .field(ng-repeat="txt in ['username', 'password']", id="{{ txt }}-wrapper")
+            .authentication-fields(ng-show="!loginCtrl.authStore.isAuthenticated()")
+                .nav-menu-sub-item.field(ng-repeat="txt in ['username', 'password']", id="{{ txt }}-wrapper", ng-show="navbar.showOptionGroup('login')")
                     label.placeholder-label(for="txt-{{ txt }}") {{ loginCtrl.model[txt].validations.title }}
                     input.placeholder-input(ng-class="{ 'not-empty': loginForm[txt].$viewValue }", ng-model="loginCtrl.model[txt].value", id="txt-{{ txt }}" name="{{ txt }}", type="{{ txt === 'password' ? txt : 'text' }}" value="", ng-pattern="loginCtrl.model[txt].validations.pattern", ng-minlength="loginCtrl.model[txt].validations.minLength", ng-maxlength="loginCtrl.model[txt].validations.maxLength", required)
-                .buttons.buttons-wrapper
+                .nav-menu-sub-item.buttons.buttons-wrapper(ng-show="navbar.showOptionGroup('login')")
                     button#btn-clear.btn-main(type="button", ng-disabled="!loginForm.password.$viewValue && !loginForm.username.$viewValue && !loginCtrl.model.realm.value", ng-click="loginCtrl.resetModel()", ng-bind="loginCtrl.loginLoading ? 'Cancel' : 'Clear'")
                     button#btn-sign-in.btn-main(type="submit", ng-disabled="loginForm.$invalid") Sign In

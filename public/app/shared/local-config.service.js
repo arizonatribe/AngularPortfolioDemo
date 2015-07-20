@@ -57,10 +57,9 @@
            apiBaseUrl: '',
            clientId: null,
            authServerUrl: '',
-           apiVersion: '',
            logging: null,
            getQueryStringAPI: function(appendToPath) {
-            return this.apiBaseUrl + this.apiVersion + (appendToPath ? appendToPath : '');
+            return this.apiBaseUrl + (appendToPath ? appendToPath : '');
           }
          },
         /**
@@ -91,7 +90,6 @@
               configSettings.apiBaseUrl = data.apiBaseUrl;
               configSettings.authServerUrl = data.authServerUrl;
               configSettings.clientId = data.clientId;
-              configSettings.apiVersion = data.apiVersion;
 
               if (data.logging && !!data.logging) {
                 configSettings.logging = !!(data.logging);

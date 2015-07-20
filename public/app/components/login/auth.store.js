@@ -148,12 +148,13 @@
            * @returns {number} a numeric value indicating how much time is left (in milliseconds) before the given token expires
            */
           howMuchTimeLeft = function(token, checkAccessTokenInstead) {
+            var timeSinceAuthentication = $this._.currentMilliseconds() - ~~token.timeOfAuthentication;
             if (!token) { token = angular.copy(authToken); }
-            if (parseInt(token.timeOfAuthentication, 10) > 0) {
-              if (parseInt(token.refreshTokenTimeout, 10) > 0 && !checkAccessTokenInstead) {
-                return parseInt(token.refreshTokenTimeout, 10) - ($this._.currentMilliseconds() - parseInt(token.timeOfAuthentication, 10));
-              } else if (parseInt(token.tokenTimeout, 10) > 0) {
-                return parseInt(token.tokenTimeout, 10) - ($this._.currentMilliseconds() - parseInt(token.timeOfAuthentication, 10));
+            if (~~token.timeOfAuthentication > 0) {
+              if (~~token.refreshTokenTimeout > 0 && !checkAccessTokenInstead) {
+                return ~~token.refreshTokenTimeout - timeSinceAuthentication;
+              } else if (~~token.tokenTimeout > 0) {
+                return ~~token.tokenTimeout - timeSinceAuthentication;
               }
             }
 
@@ -169,10 +170,12 @@
           /**
            * Flushes out the user's authentication information, removing the token from storage and setting the locally-managed copy of the token to default values
            * @method folio.auth.AuthStore#signOff
+           * @returns {boolean} An indication as to whether the auth token was successfully removed
            */
           signOff = function() {
             $this.storageService.removeItem($this.authTokenKey);
             resetTokenToDefaults();
+            return !$this.storageService.getItem($this.authTokenKey);
           },
           /**
            * Builds an object needed by the API for any service calls, including auth credentials and is driven by the type of grant type value being specified (ie: password, refresh_token, or protected_resource)

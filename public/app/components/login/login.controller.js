@@ -1,32 +1,21 @@
 ﻿(function() {
   'use strict';
   angular.module('folio.login')
-    .controller('LoginController', ['authService', 'errorHandlingService', 'validationService', 'urlService', 'apiCallHandlerService', '$state', '_', '$rootScope', 'localConfig', '$location', LoginController]);
+    .controller('LoginController', ['authService', 'authStore', 'errorHandlingService', 'validationService', 'apiCallHandlerService', LoginController]);
 
   /**
    * LoginController Javascript class constructor sets default values for certain members and injects dependencies into the constructed instance
    * @name folio.login.LoginController
    * @class
    * @param {object} authService manages user authentication request to auth API
+   * @param {object} authStore manages the auth token
    * @param {object} errorHandlingService error handling service
    * @param {object} validationService input validation service
-   * @param {object} urlService URL parsing and validation service
    * @param {object} apiCallHandlerService manages API calls and throttling of multiple calls
-   * @param {object} $state angular $state service from which to obtain 'routing' parameters for ui-router
-   * @param {object} _ underscore js library with our custom mixins
-   * @param {object} $rootScope angular $rootScope service
-   * @param {object} localConfig manages import settings from local config.json
-   * @param {object} $location angular window.location wrapper service
    * @constructor
    */
-  function LoginController(authService, errorHandlingService, validationService, urlService, apiCallHandlerService, $state, _, $rootScope, localConfig, $location) {
+  function LoginController(authService, authStore, errorHandlingService, validationService, apiCallHandlerService) {
 
-    /**
-     * local config file management service
-     * @property {object}
-     * @name folio.login.LoginController#localConfig
-     */
-    this.localConfig = localConfig;
     /**
      * user authentication and realms retrieval service
      * @property {object}
@@ -34,11 +23,11 @@
      */
     this.authService = authService;
     /**
-     * underscore js library with our custom mixins
+     * auth token management service
      * @property {object}
-     * @name folio.login.LoginController#_
+     * @name folio.login.LoginController#authStore
      */
-    this._ = _;
+    this.authStore = authStore;
     /**
      * error handling service
      * @property {object}
@@ -52,45 +41,11 @@
      */
     this.validationService = validationService;
     /**
-     * url formatting and validation service
-     * @property {object}
-     * @name folio.login.LoginController#urlService
-     */
-    this.urlService = urlService;
-    /**
      * api call handling service
      * @property {object}
      * @name folio.login.LoginController#apiCallHandlerService
      */
     this.apiCallHandlerService = apiCallHandlerService;
-    /**
-     * angular root scope service
-     * @property {object}
-     * @name folio.login.LoginController#$rootScope
-     */
-    this.$rootScope = $rootScope;
-    /**
-     * angular window.location wrapper service
-     * @property {object}
-     * @name folio.login.LoginController#$location
-     */
-    this.$location = $location;
-
-    var $this = this;
-    /**
-     * Parameters obtained from the query string on being "routed" here
-     * @name folio.login.LoginController#urlOptions
-     * @property {object}
-     * @type {object}
-     */
-    this.urlOptions = $state && $state.params ? _.pick($state.params, 'redirectUrl', 'realm', 'appDisplayName', 'clientId') : {};
-
-    /**
-     * If the user provided a client id, use that one for the authentication calls later
-     */
-    if ($this.urlOptions.clientId) {
-      localConfig.setClientId($this.urlOptions.clientId);
-    }
 
     /**
      * Holds the authentication credentials entered by the user (username, password, realm) as well as operational methods like individual field validation and display formatting
@@ -112,6 +67,7 @@
   }
 
   LoginController.prototype = {
+    constructor: LoginController,
     /**
      * Clears all authentication form fields and resets the drop down list for the realms
      * @method folio.login.LoginController#resetModel
@@ -124,6 +80,14 @@
         this.errorHandlingService.clearWarning();
       }
       this.apiCallHandlerService.cancelAll();
+    },
+    /**
+     * Signs the user out if they are currently signed in
+     * @method folio.login.LoginController#signOutIfSignedIn
+     * @returns {boolean} Returns true if a signed-in user was successfully signed out
+     */
+    signOutIfSignedIn: function() {
+      return !!this.authStore.isAuthenticated() && this.authStore.signOff() && this.resetModel();
     },
     /**
      * Attempts to authenticate the user against the selected realm and redirects them back to the application (after placing the tokens in session) if successful

@@ -1,6 +1,6 @@
 var applicants = [],
-		utilities = require('../services/utilities.js'),
-		faker = require('faker');
+    utilities = require('../services/utilities.js'),
+    faker = require('faker');
 
 module.exports.createApplicant = function(overrides) {
   var applicant = {

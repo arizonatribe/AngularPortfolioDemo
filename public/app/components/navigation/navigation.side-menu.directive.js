@@ -1,7 +1,7 @@
 (function() {
   'use strict';
   angular.module('folio.navigation')
-    .controller('SideMenuController', ['errorHandlingService', 'authStore', '_', SideMenuController])
+    .controller('SideMenuController', [SideMenuController])
 	.directive('sideMenu', [SideMenuDirective]);
 
   /**
@@ -22,33 +22,12 @@
   }
 
   /**
-   * Controller which manages the navigation menus on the side nav pane and can receive a sign out command from the user
+   * Controller which manages the navigation menus on the side nav pane
    * @name folio.navigation.SideMenuController
    * @class
    * @constructor
-   * @param {object} errorHandlingService error handling service
-   * @param {object} authStore manages the auth token
-   * @param {object} _ underscore js library with our custom mixins
    */
-  function SideMenuController(errorHandlingService, authStore, _) {
-    /**
-     * error handling service
-     * @property {object}
-     * @name folio.navigation.SideMenuController#errorHandlingService
-     */
-    this.errorHandlingService = errorHandlingService;
-    /**
-     * auth token management service
-     * @property {object}
-     * @name folio.navigation.SideMenuController#authStore
-     */
-    this.authStore = authStore;
-    /**
-     * underscore js library with our custom mixins
-     * @property {object}
-     * @name folio.navigation.SideMenuController#_
-     */
-    this._ = _;
+  function SideMenuController() {
     /**
      * indication of which group is currently visible (null if none)
      * @property {string|null}
@@ -79,16 +58,7 @@
       } else {
         this.visibleGroup = group;
       }
-    },
-    /**
-     * Performs several housekeeping tasks when the user intentionally signs out, such as clearing the tokens from
-     * session, clearing errors/warnings
-     * @method folio.navigation.SideMenuController#signOut
-     */
-    signOut: function() {
-      this.authStore.signOff();
-      this.errorHandlingService.clearErrors();
-      this.errorHandlingService.clearWarning();
+      return true;
     }
   };
 })();

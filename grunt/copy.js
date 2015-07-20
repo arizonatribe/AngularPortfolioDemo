@@ -13,7 +13,7 @@ module.exports = {
   devmock: {
     files: [
       {expand: true, flatten: true, src: ['config/config-dev.json'], dest: 'public/app', filter: 'isFile', rename: function(dest, src) {
-        return dest + '/' + src.replace('-dev', '');
+        return dest + '/' + src.replace('config-dev', 'temp.config');
       }}
     ]
   },

@@ -24,7 +24,7 @@
     "2ECA58ED-4CA2-4AD5-BCAA-3A29834CC3C3"
   ],
   "headers": [
-    {"name": "Access-Control-Allow-Origin", "value": "http://localhost:30000"},
+    {"name": "Access-Control-Allow-Origin", "value": "http://localhost:3000"},
     {"name": "Access-Control-Allow-Methods", "value": "GET, POST, PUT, DELETE, OPTIONS, HEAD"},
     {"name": "Access-Control-Allow-Headers", "value": "X-Requested-With,content-type,Authorization"},
     {"name": "Access-Control-Allow-Credentials", "value": true}

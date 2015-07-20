@@ -16,7 +16,7 @@
 
 .layout-sidebar {
   background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAJ0lEQVQIW2NkYGD4b2xszAADjMbGxv/hPAYGBrjA2bNnGUAqMVQAAD5tCWVpzpWOAAAAAElFTkSuQmCC) repeat;
-  width: 255px;
+  width: @sidebar-width;
   height: 100%;
   position: fixed;
   top: @banner-height;
@@ -40,7 +40,7 @@
     }
 
     .menu-option {
-      width: 215px;
+      width: @sidebar-width - 40px;
       color: white;
       opacity: 0.6;
       cursor: pointer;
@@ -73,7 +73,7 @@
 
       .nav-menu-sub-item {
         margin: 5px 0 5px 15px;
-        width: 200px;
+        width: @sidebar-width - 50px;
         .RoundBorders(3px);
         padding: 2px;
         display: block;
@@ -91,11 +91,11 @@
 
 .slide-layout-right-remove, .navigation-trigger-add,
 .close-navigation-trigger-remove, .slide-layout-left-add {
-  left: 120px;
+  left: @sidebar-width - 130px;
 }
 
 .slide-layout-right, .navigation-trigger {
-  left: 250px;
+  left: @sidebar-width;
 }
 
 .close-navigation-trigger, .slide-layout-left {

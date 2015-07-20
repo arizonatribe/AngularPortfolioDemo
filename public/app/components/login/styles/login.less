@@ -5,30 +5,12 @@
 */
 
 #login-form-wrapper {
-  width: @login-form-width;
-  height: @login-form-height;
-  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAJ0lEQVQIW2NkYGD4b2xszAADjMbGxv/hPAYGBrjA2bNnGUAqMVQAAD5tCWVpzpWOAAAAAElFTkSuQmCC) repeat;
-  .RoundBorders(8px);
-  .BoxShadow(3px, 3px, 3px, #999);
-  .FullyCentralizeDiv;
-
-  /* Header Styles */
-
-  #login-form-banner {
-    position: absolute;
-    top: 30px;
-    width: 100%;
-    float: left;
-    height: @banner-height;
-    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAJklEQVQIW2P8v8X4P4P9HAYYYPz/+fx/OI+BgQEhcDCFAaQSQwUAgXwRBSV3b/AAAAAASUVORK5CYII=) repeat;
-  }
+  background: transparent;
 
   /* Form Styles */
 
   #login-form {
     clear: both;
-    margin-top: 150px;
-    height: 250px;
 
     label {
       width: 120px;
@@ -104,8 +86,8 @@
 
       .placeholder-input:focus,
       .placeholder-input.not-empty {
-        margin-left: 120px;
-        width: 330px;
+        margin-left: 100px;
+        width: @field-width - 100px;
         outline: none;
       }
     }

@@ -27,6 +27,7 @@
 	  "public/app/components/login/auth.store.js",
 	  "public/app/components/login/auth.service.js",
 	  "public/app/components/login/login.controller.js",
+	  "public/app/components/login/login.directive.js",
 	  "public/app/components/navigation/navigation.side-menu.directive.js",
 	  "public/app/components/navigation/navigation.toggle-button.directive.js",
 	  "public/app/config.module.js"

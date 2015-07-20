@@ -1,6 +1,6 @@
 var _ = require('underscore'),
-		_s = require('underscore.string'),
-		utilities = require('./utilities.js');
+    _s = require('underscore.string'),
+    utilities = require('./utilities.js');
 
 exports.getAuthType = function(req) {
   var headers = req.headers,
@@ -34,7 +34,7 @@ exports.getAuthorization = function(req) {
           propertyNameAndValue = value.split('=');
 
           if (propertyNameAndValue && propertyNameAndValue.length === 2) {
-            authorizationObject[propertyNameAndValue[0]] = propertyNameAndValue[1];
+            authorizationObject[propertyNameAndValue[0]] = decodeURIComponent(propertyNameAndValue[1]);
           }
         });
       }
@@ -48,7 +48,7 @@ exports.getUser = function(req) {
   var authorization = this.getAuthorization(req);
 
   if (authorization) {
-    return _.findWhere(utilities.getItems('users'), { username:  _s.trim(authorization.username) });
+    return _.findWhere(utilities.getItems('users'), { username:  _s.trim(decodeURIComponent(authorization.username)) });
   }
 };
 
@@ -106,7 +106,7 @@ exports.validateToken = function(req, tokenType) {
               if (!users || !users.length) {
                 errorMessages.push('No users found');
               } else {
-                foundUser = utilities.getUser(req);
+                foundUser = $this.getUser(req);
                 if (!foundUser) {
                   errorMessages.push('Invalid Username');
                 } else {
