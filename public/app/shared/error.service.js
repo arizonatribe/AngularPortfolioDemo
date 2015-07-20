@@ -4,7 +4,9 @@
       .provider('errorHandlingService', [ErrorHandlingService]);
 
   /**
-   * ErrorHandlingService Javascript class constructor sets default values for certain members and injects dependencies into the constructed instance
+   * ErrorHandlingService manages the parsing and creation of error messages and/or warning messages from either promise
+   * objects, standard JavaScript `Error` objects, or other generic objects which may contain an error message with one
+   * of several expected property names. More error codes may be added to the default list during `angular.config()`
    * @name folio.shared.ErrorHandlingService
    * @class
    * @constructor

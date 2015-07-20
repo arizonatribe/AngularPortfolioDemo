@@ -4,7 +4,10 @@
       .provider('apiCallHandlerService', [ApiCallHandlerService]);
 
   /**
-   * ApiCallHandlerService Javascript class constructor sets default values for certain members and injects dependencies into the constructed instance
+   * ApiCallHandlerService abstracts away the details for creating and resolving/rejecting API requests as well as
+   * throttling large amounts of them and addressing race conditions in promises. This service needs to be set up
+   * during the `angular.config()` phase with a list of distinct API call names that need to be managed by this service
+   * (which will be used whenever the actual API calls are made)
    * @name folio.shared.ApiCallHandlerService
    * @class
    * @constructor

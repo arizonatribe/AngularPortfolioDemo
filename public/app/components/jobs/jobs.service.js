@@ -4,7 +4,7 @@
       .service('jobsService', ['$q', '_', 'localConfig', 'authStore', '$http', 'errorHandlingService', JobsService]);
 
   /**
-   * JobsService Javascript class constructor sets default values for certain members and injects dependencies into the constructed instance
+   * JobsService interacts with the `/jobs` API endpoint to retrive the listed jobs
    * @name folio.jobs.JobsService
    * @class
    * @param {object} $q angular $q service

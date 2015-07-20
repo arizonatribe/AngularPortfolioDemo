@@ -4,7 +4,7 @@
       .directive('listedJobs', [JobsListingDirective]);
 
   /**
-   * Directive which renders the login/logout controls
+   * Directive which renders the listed jobs
    * @name folio.jobs.JobsListingDirective
    * @class
    * @returns {{restrict: string, controller: string, controllerAs: string, templateUrl: string}}

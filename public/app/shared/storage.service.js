@@ -4,7 +4,10 @@
       .factory('storageService', ['_', '_s', '$window', 'localStorageService', '$crypto', StorageService]);
 
   /**
-   * StorageService Javascript class constructor sets default values for certain members and injects dependencies into the constructed instance
+   * StorageService handles committing values or whole objects to the underlying storage mechanism, be it `localStorage`,
+   * `sessionStorage` or `cookie` and also handles optional encryption of data prior to committing to storage. The low-
+   * level implementation of placing into storage is handled by a 3rd-party dependency
+   * {@link https://github.com/grevory/angular-local-storage|angular-local-storage}.
    * @name folio.shared.StorageService
    * @class
    * @param {object} _ underscore js library with our custom mixins

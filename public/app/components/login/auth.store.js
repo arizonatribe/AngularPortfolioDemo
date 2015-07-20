@@ -11,7 +11,10 @@
     .factory('authStore', ['_', 'storageService', '_s', '$crypto', 'authTokenKey', AuthStore]);
 
   /**
-   * AuthStore Javascript class constructor sets default values for certain members and injects dependencies into the constructed instance
+   * AuthStore stores the auth and refresh tokens received from the API (which must accompany API requests), abstracting
+   * away the storage details to the {@link folio.shared.storageService|storageService}. It also provides convenience
+   * methods for putting together the authorization-related request headers and interpreting auth status based on its
+   * details.
    * @name folio.auth.AuthStore
    * @class
    * @param {object} _ underscore js library with our custom mixins

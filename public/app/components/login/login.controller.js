@@ -4,7 +4,8 @@
     .controller('LoginController', ['authService', 'authStore', 'validationService', 'promiseHandlerService', LoginController]);
 
   /**
-   * LoginController Javascript class constructor sets default values for certain members and injects dependencies into the constructed instance
+   * LoginController supports the {@link folio.login.LoginDirective|LoginDirective} and responds to user interactivity
+   * related to signing in and out
    * @name folio.login.LoginController
    * @class
    * @param {object} authService manages user authentication request to auth API

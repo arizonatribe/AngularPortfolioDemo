@@ -4,7 +4,8 @@
       .provider('eventService', [EventService]);
 
   /**
-   * EventService Javascript class constructor sets default values for certain members and injects dependencies into the constructed instance
+   * EventService provides several convenience methods for comparing or identifying events, pre-seeded with the most
+   * relevant and common events, but more can be added during `angular.config()`.
    * @name folio.shared.EventService
    * @class
    * @constructor

@@ -4,7 +4,9 @@
       .factory('promiseHandlerService', ['_', 'apiCallHandlerService', 'errorHandlingService', PromiseHandlerService]);
 
   /**
-   * PromiseHandlerService Javascript class constructor sets default values for certain members and injects dependencies into the constructed instance
+   * PromiseHandlerService sits on top of the {@link folio.shared.errorHandlingService|errorHandlingService} and the
+   * {@link folio.shared.apiCallHandlerService|apiCallHandlerService} to further simplify the interaction with API
+   * endpoints through promise-returning services and any associated error handling.
    * @name folio.shared.PromiseHandlerService
    * @class
    * @param {object} _ underscore js library with our custom mixins

@@ -4,7 +4,8 @@
       .provider('validationService', [ValidationService]);
 
   /**
-   * ValidationService Javascript class constructor sets default values for certain members and injects dependencies into the constructed instance
+   * ValidationService handles regex validation of a standard set of common field types (ie, username, password, email)
+   * but more may be added to this service during `app.config()`
    * @name folio.shared.ValidationService
    * @class
    * @constructor

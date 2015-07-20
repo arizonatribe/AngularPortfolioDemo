@@ -11,7 +11,8 @@
       .factory('localConfig', ['$http', '$q', 'configFilePath', 'errorHandlingService', LocalConfig]);
 
   /**
-   * LocalConfig Javascript class constructor sets default values for certain members and injects dependencies into the constructed instance
+   * LocalConfig convenience method for retrieving a local `config.json` file holding API connection details and
+   * persisting its values into a local cache after read in the very first time
    * @name folio.shared.LocalConfig
    * @class
    * @param {object} $http angular $http service

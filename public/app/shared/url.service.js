@@ -4,7 +4,8 @@
       .factory('urlService', ['_', '_s', 'errorHandlingService', 'validationService', '$sce', '$document', '$location', UrlService]);
 
   /**
-   * UrlService Javascript class constructor sets default values for certain members and injects dependencies into the constructed instance
+   * UrlService handles basic URL string parsing/validating as well as provides a convenience method for using the
+   * angular {@link https://docs.angularjs.org/api/ng/service/$sce|$sce} service to mark a URL as trusted
    * @name folio.shared.UrlService
    * @class
    * @param {object} _ underscore js library with our custom mixins

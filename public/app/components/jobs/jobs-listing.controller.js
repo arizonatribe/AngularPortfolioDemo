@@ -4,7 +4,8 @@
       .controller('JobsListingController', ['jobsService', JobsListingController]);
 
   /**
-   * JobsListingController Javascript class constructor sets default values for certain members and injects dependencies into the constructed instance
+   * JobsListingController which supports the {@link folio.jobs.JobsListingDirective|JobsListingDirective} and provides
+   * it with the {@link folio.jobs.JobsService|JobsService}
    * @name folio.jobs.JobsController
    * @class
    * @param {object} jobsService manages job requests to jobsService API

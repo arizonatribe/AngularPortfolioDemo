@@ -4,7 +4,8 @@
     .factory('authService', ['$q', '_', 'localConfig', 'authStore', '$http', 'errorHandlingService', 'validationService', AuthService]);
 
   /**
-   * AuthService Javascript class constructor sets default values for certain members and injects dependencies into the constructed instance
+   * AuthService which attempts to authenticate the user and update the {@link folio.auth.authStore|authStore} if
+   * successful
    * @name folio.auth.AuthService
    * @class
    * @param {object} $q angular $q service

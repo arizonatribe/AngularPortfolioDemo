@@ -4,7 +4,7 @@
       .directive('jobsFilter', [JobsDirective]);
 
   /**
-   * Directive which renders the login/logout controls
+   * Directive which renders the jobs filter links
    * @name folio.jobs.JobsDirective
    * @class
    * @returns {{restrict: string, controller: string, controllerAs: string, templateUrl: string}}

@@ -4,7 +4,8 @@
       .controller('ErrorController', ['errorHandlingService', ErrorController]);
 
   /**
-   * ErrorController Javascript class constructor sets default values for certain members and injects dependencies into the constructed instance
+   * ErrorController supports the {@link folio.error.ErrorMessageHandlerDirective|ErrorMessageHandlerDirective} and
+   * provides it with the {@link folio.shared.ErrorHandlingService|ErrorHandlingService}
    * @class folio.shared.ErrorController
    * @param {object} errorHandlingService error handling service
    * @constructor
