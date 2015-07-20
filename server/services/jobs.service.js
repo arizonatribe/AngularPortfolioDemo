@@ -1,11 +1,11 @@
 var jobs = [],
-		utilities = require('../services/utilities.js'),
-		faker = require('faker');
+    utilities = require('../services/utilities.js'),
+    faker = require('faker');
 
 module.exports.createJobListing = function(overrides) {
   var job = {
     id: faker.random.uuid(),
-    description: overrides && overrides.description ? overrides.description : faker.lorem.paragraphs(),
+    description: overrides && overrides.description ? overrides.description : faker.lorem.paragraph(),
     requirements: overrides && overrides.requirements ? overrides.requirements : faker.lorem.paragraphs()
   };
 
@@ -25,5 +25,10 @@ module.exports.delete = function(jobId) {
 };
 
 module.exports.list = function() {
+  if (!jobs.length) {
+    for (var i = 0; i < 25; i++) {
+      this.createJobListing();
+    }
+  }
   return jobs;
 };

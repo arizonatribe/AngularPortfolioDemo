@@ -33,6 +33,7 @@
      * Shows or hides a filtering/paging/sorting option section on the sidebar menu
      * @method folio.navigation.SideMenuController#toggleGroup
      * @param {string} group A string value representing the nav menu group to be shown/hidden
+     * @returns {boolean} A value indicating whether a given group is now active
      */
     toggleGroup: function(group) {
       if (this.showOptionGroup(group)) {
@@ -40,7 +41,7 @@
       } else {
         this.visibleGroup = group;
       }
-      return true;
+      return !!this.visibleGroup;
     }
   };
 })();

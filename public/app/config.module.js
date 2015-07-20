@@ -1,21 +1,16 @@
 ﻿(function() {
   'use strict';
-  var mainAppName = 'folio';
+  var mainAppName = 'folio',
+      thirdPartyModules = ['ui.router', 'ngAnimate'],
+      localModules = ['shared', 'error', 'config', 'auth', 'login', 'navigation', 'jobs'].map(function(mod) {
+        return mainAppName + '.' + mod;
+      });
+
   /**
    * Parent module under which all the others will be attached
   * @namespace folio
   */
-  angular.module(mainAppName,
-  [
-    'ui.router',
-    'ngAnimate',
-    'folio.shared',
-    'folio.error',
-    'folio.auth',
-    'folio.config',
-    'folio.login',
-    'folio.navigation'
-  ]);
+  angular.module(mainAppName, thirdPartyModules.concat(localModules));
 
   /**
    * Attaches the application to the DOM when the document object is ready

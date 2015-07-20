@@ -1,7 +1,6 @@
 (function() {
   'use strict';
-  angular.module('folio.shared')
-      .controller('ErrorController', ['errorHandlingService', ErrorController])
+  angular.module('folio.error')
       .directive('errorMessageHandler', [ErrorMessageHandlerDirective]);
 
   /**
@@ -19,21 +18,5 @@
       controller: 'ErrorController',
       bindToController: true
     };
-  }
-
-  /**
-   * ErrorController Javascript class constructor sets default values for certain members and injects dependencies into the constructed instance
-   * @class folio.shared.ErrorController
-   * @param {object} errorHandlingService error handling service
-   * @constructor
-   */
-  function ErrorController(errorHandlingService) {
-
-    /**
-     * error handling service
-     * @property {object}
-     * @name folio.shared.ErrorController#service
-     */
-    this.service = errorHandlingService;
   }
 })();

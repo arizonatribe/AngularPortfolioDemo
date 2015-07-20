@@ -1,7 +1,7 @@
 ﻿(function() {
   'use strict';
   angular.module('folio.auth')
-    .factory('authService', ['$q', '_', '_s', 'localConfig', 'authStore', '$http', 'errorHandlingService', 'validationService', AuthService]);
+    .factory('authService', ['$q', '_', 'localConfig', 'authStore', '$http', 'errorHandlingService', 'validationService', AuthService]);
 
   /**
    * AuthService Javascript class constructor sets default values for certain members and injects dependencies into the constructed instance
@@ -9,7 +9,6 @@
    * @class
    * @param {object} $q angular $q service
    * @param {object} _ underscore js library with our custom mixins
-   * @param {object} _s underscore.string library
    * @param {object} localConfig manages import settings from local config.json
    * @param {object} authStore manages the auth token
    * @param {object} $http angular $http service
@@ -17,7 +16,7 @@
    * @param {object} validationService input validation service
    * @constructor
    */
-  function AuthService($q, _, _s, localConfig, authStore, $http, errorHandlingService, validationService) {
+  function AuthService($q, _, localConfig, authStore, $http, errorHandlingService, validationService) {
 
     /**
      * Angular $http service
@@ -43,12 +42,6 @@
      * @name folio.auth.AuthService#_
      */
     this._ = _;
-    /**
-     * underscore.string library
-     * @property {object}
-     * @name folio.auth.AuthService#_s
-     */
-    this._s = _s;
     /**
      * local config file management service
      * @property {object}

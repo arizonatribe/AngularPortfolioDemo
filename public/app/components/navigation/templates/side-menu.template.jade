@@ -1,11 +1,6 @@
 .layout-sidebar(ng-show="navbar.showNavMenu")
-    form(name="filterForm")
     .nav-menu
         .menu-option
-            span(ng-click="navbar.toggleGroup('borking')") Bork
-            .nav-menu-sub-item(ng-show="navbar.showOptionGroup('borking')") Herschen
-            .nav-menu-sub-item(ng-show="navbar.showOptionGroup('borking')") Berschen
-            .nav-menu-sub-item(ng-show="navbar.showOptionGroup('borking')") Werschen
-            .nav-menu-sub-item(ng-show="navbar.showOptionGroup('borking')") Bork Bork
+            jobs-filter
         .menu-option.link-signoff
             login-logout
