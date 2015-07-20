@@ -1,3 +1,5 @@
+var filePaths = require('../config/file-paths.json');
+
 /**
  * Sequences of Grunt tasks registered under a single name.
  * 'Default' defines what is always run whenever "grunt" and nothing else is entered at the command line, and in this
@@ -105,7 +107,7 @@ module.exports = {
   'all-documentation': [
       'markdownpdf',
       'jsdoc-ng',
-      'open-code-docs'
+      'open-code-docs:' + filePaths.apiDocsPath + 'index.html'
   ],
   /**
    * The sequence of "test" tasks that perform unit testing, end-to-end testing, linting, and javascript style checking.

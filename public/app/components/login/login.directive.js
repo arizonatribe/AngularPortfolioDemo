@@ -13,7 +13,7 @@
   function LoginDirective() {
     return {
       restrict: 'E',
-      templateUrl: 'components/login/templates/content.template.html',
+      templateUrl: 'components/login/templates/login.template.html',
       controller: 'LoginController',
       controllerAs: 'loginCtrl',
       bindToController: true

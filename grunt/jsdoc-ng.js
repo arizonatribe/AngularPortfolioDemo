@@ -8,7 +8,7 @@ var filePaths = require('../config/file-paths.json');
 module.exports = {
   dist: {
     src: filePaths.codePathsVerbose.concat(['GruntFile.js', 'grunt/**/*.js']),
-    dest: 'docs/code',
+    dest: filePaths.apiDocsPath,
     template: 'jsdoc-ng'
   }
 };

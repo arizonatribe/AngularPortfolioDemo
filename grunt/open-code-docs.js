@@ -8,8 +8,8 @@
  * @param {object} grunt Instance of Grunt from which to register the custom task
  */
 module.exports = function(grunt) {
-  grunt.registerTask('open-code-docs', 'launches structured API style documentation from JSDoc annotations found in the codebase', function() {
-    grunt.log.writeln('opening docs...');
-    require('open')('docs/code/index.html');
+  grunt.registerTask('open-code-docs', 'launches structured API style documentation from JSDoc annotations found in the codebase', function(arg1) {
+    grunt.log.writeln('opening doc ' + arg1);
+    require('open')(arg1);
   });
 };

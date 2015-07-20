@@ -10,6 +10,6 @@ module.exports = {
   jade: ['dist/**/*.jade'],
   less: ['dist/**/*.less'],
   devcss: ['public/app/**/*.css', '!**/bower_components/**'],
-  devhtml: ['public/app/**/*.html'],
-  devconfig: ['public/app/**/*.json']
+  devhtml: ['public/app/**/*.html', '!**/bower_components/**'],
+  devconfig: ['public/app/**/*.json', '!**/bower_components/**']
 };

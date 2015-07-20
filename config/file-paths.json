@@ -28,7 +28,9 @@
 	  "public/app/components/login/auth.service.js",
 	  "public/app/components/login/login.controller.js",
 	  "public/app/components/login/login.directive.js",
+	  "public/app/components/navigation/navigation.side-menu.controller.js",
 	  "public/app/components/navigation/navigation.side-menu.directive.js",
+	  "public/app/components/navigation/navigation.toggle-button.controller.js",
 	  "public/app/components/navigation/navigation.toggle-button.directive.js",
 	  "public/app/config.module.js"
 	],
@@ -77,7 +79,7 @@
         "public/app/bower_components/angular-mocks/angular-mocks.js"
     ],
 	"jadePaths": [
-		"public/app/components/login/templates/content.template.jade",
+		"public/app/components/login/templates/login.template.jade",
 		"public/app/components/navigation/templates/layout.template.jade",
 		"public/app/components/navigation/templates/side-menu.template.jade",
 		"public/app/components/navigation/templates/toggle-button.template.jade",
@@ -93,5 +95,6 @@
     "vendorCssPaths": [
         "public/app/bower_components/html5-boilerplate/css/normalize.css",
         "public/app/bower_components/html5-boilerplate/css/main.css"
-    ]
+    ],
+    "apiDocsPath": "docs/code/"
 }
