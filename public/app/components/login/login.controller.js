@@ -1,7 +1,7 @@
 ﻿(function() {
   'use strict';
   angular.module('folio.login')
-    .controller('LoginController', ['authService', 'authStore', 'validationService', 'promiseHandlerService', LoginController]);
+    .controller('LoginController', ['authService', 'authStore', 'validationService', 'promiseHandlerService', '_', LoginController]);
 
   /**
    * LoginController supports the {@link folio.login.LoginDirective|LoginDirective} and responds to user interactivity
@@ -12,16 +12,17 @@
    * @param {object} authStore manages the auth token
    * @param {object} validationService input validation service
    * @param {object} promiseHandlerService manages promise returning calls
+   * @param {object} _ underscore js library with our custom mixins
    * @constructor
    */
-  function LoginController(authService, authStore, validationService, promiseHandlerService) {
+  function LoginController(authService, authStore, validationService, promiseHandlerService, _) {
 
     /**
      * user authentication retrieval service
      * @property {object}
      * @name folio.login.LoginController#authService
      */
-    this.authService = authService;
+    this.authService = _.bindAll(authService, 'authenticateUser');
     /**
      * auth token management service
      * @property {object}
@@ -39,8 +40,13 @@
      * @property {object}
      * @name folio.login.LoginController#promiseHandlerService
      */
-    this.promiseHandlerService = promiseHandlerService;
-
+    this.promiseHandlerService = _.bindAll(promiseHandlerService, 'callApi', 'reset');
+    /**
+     * Basic indicator value used to toggle UI-related functionality based on the status of authentication attempt
+     * @property {boolean}
+     * @name folio.login.LoginController#loginLoading
+     */
+    this.loginLoading = false;
     /**
      * Puts the controller model back to default values (is immediately invoked in the controller's constructor)
      * @method folio.login.LoginController#initializeModel
@@ -74,7 +80,7 @@
      * @method folio.login.LoginController#resetModel
      */
     resetModel: function() {
-      this.promiseHandlerService.reset.call(this.promiseHandlerService, this.loginLoading, this.initializeModel.bind(this));
+      this.promiseHandlerService.reset(this.loginLoading, this.initializeModel.bind(this));
     },
     /**
      * Signs the user out if they are currently signed in
@@ -90,10 +96,10 @@
      * @method folio.login.LoginController#signIn
      */
     signIn: function() {
-      var authUser = this.authService.authenticateUser.bind(
-          this.authService, this.model.username.value, this.model.password.value);
-
-      this.promiseHandlerService.callApi('Auth', this.loginLoading, authUser);
+      this.promiseHandlerService.callApi('Auth',
+        this.loginLoading,
+        this.authService.authenticateUser.bind(null, this.model.username.value, this.model.password.value)
+      );
     }
   };
 })();
