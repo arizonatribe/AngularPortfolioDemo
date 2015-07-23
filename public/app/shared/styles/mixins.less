@@ -49,9 +49,9 @@
 }
 
 .BoxShadowInsetOutset (@inset-x: 0, @inset-y: 0, @inset-blur: 12px, @inset-color: @panel-bg-color, @x: 0, @y: 0, @blur: 12px, @color: @panel-bg-color) {
-  box-shadow: inset @arguments;
-  -moz-box-shadow: inset @arguments;
-  -webkit-box-shadow: inset @arguments;
+  box-shadow: inset @inset-x @inset-y @inset-blur @inset-color, @x @y @blur @color;
+  -moz-box-shadow: inset @inset-x @inset-y @inset-blur @inset-color, @x @y @blur @color;
+  -webkit-box-shadow: inset @inset-x @inset-y @inset-blur @inset-color, @x @y @blur @color;
 }
 
 .HorizontalGradient (@color1: @body-bg-color, @color2: @panel-bg-color) {

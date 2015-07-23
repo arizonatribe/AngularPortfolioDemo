@@ -1,0 +1,42 @@
+@import "../../../shared/styles/variables.less";
+@import "../../../shared/styles/mixins.less";
+
+.company-listing {
+  padding: 0.8em;
+  display: block;
+  float: left;
+  width: 16em;
+  border: 1px solid @panel-bg-color;
+  margin: 0.3em 0.5em 0.5em 0.3em;
+  .BoxShadow(0.2em, 0.2em);
+  z-index: 10;
+
+  .company-listing-bevel {
+    .BoxShadowInsetOutset(0, 0, 2px, lighten(@panel-bg-color, 20%), 0, 0, 2px, lighten(@panel-bg-color, 20%));
+    border: 2px solid transparent;
+    padding: 0.3em 0.5em 1em 0.5em;
+
+
+    .company-name {
+      background-color: darken(@body-bg-color, 10%);
+      padding: 0.5em;
+      margin-top: 0.5em;
+      font-size: 90%;
+    }
+
+    .company-phone {
+      font-size: 75%;
+      text-align: right;
+      padding: 1em 0.5em 0 0.5em;
+      font-family: "Consolas", "Courier New", monospace;
+    }
+
+    .company-slogan {
+      font-style: italic;
+      font-family: "Book Antiqua", Palatino, serif;
+      text-align: center;
+      padding: 0.5em;
+      font-size: 80%;
+    }
+  }
+}

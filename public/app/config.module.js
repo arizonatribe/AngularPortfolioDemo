@@ -2,7 +2,7 @@
   'use strict';
   var mainAppName = 'folio',
       thirdPartyModules = ['ui.router', 'ngAnimate'],
-      localModules = ['shared', 'error', 'config', 'auth', 'login', 'navigation', 'jobs'].map(function(mod) {
+      localModules = ['shared', 'error', 'config', 'auth', 'login', 'navigation', 'jobs', 'companies'].map(function(mod) {
         return mainAppName + '.' + mod;
       });
 

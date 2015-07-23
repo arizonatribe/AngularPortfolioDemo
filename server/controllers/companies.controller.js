@@ -6,7 +6,7 @@ exports.list = function(req, res, next) {
   utilities.setHeaders(res);
 
   res.send({
-    Companies: companies.get()
+    Companies: companies.list()
   });
 };
 

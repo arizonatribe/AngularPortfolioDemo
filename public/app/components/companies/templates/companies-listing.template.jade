@@ -1,0 +1,5 @@
+.company-listing(ng-repeat="company in compLCtrl.companiesService.companies track by company.id", ng-show="navbar.showOptionGroup('companies')")
+   .company-listing-bevel
+      .company-name(ng-bind="::company.name")
+      .company-slogan(ng-bind="::company.slogan")
+      .company-phone(ng-bind="::company.phone")

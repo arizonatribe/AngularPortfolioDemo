@@ -40,6 +40,11 @@
 	  "public/app/components/jobs/jobs-listing.controller.js",
 	  "public/app/components/jobs/jobs.directive.js",
 	  "public/app/components/jobs/jobs-listing.directive.js",
+	  "public/app/components/companies/companies.service.js",
+	  "public/app/components/companies/companies.controller.js",
+	  "public/app/components/companies/companies-listing.controller.js",
+	  "public/app/components/companies/companies.directive.js",
+	  "public/app/components/companies/companies-listing.directive.js",
 	  "public/app/config.module.js"
 	],
     "mockPaths": [
@@ -94,6 +99,8 @@
 		"public/app/components/error/templates/error.template.jade",
 	  	"public/app/components/jobs/templates/jobs.template.jade",
 	  	"public/app/components/jobs/templates/jobs-listing.template.jade",
+	    "public/app/components/companies/templates/companies.template.jade",
+	    "public/app/components/companies/templates/companies-listing.template.jade",
 	  	"public/app/index.jade"
 	],
 	"fontPaths": [
