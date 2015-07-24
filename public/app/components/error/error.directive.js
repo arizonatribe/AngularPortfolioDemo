@@ -14,7 +14,7 @@
     return {
       restrict: 'E',
       templateUrl: 'components/error/templates/error.template.html',
-      controllerAs: 'errorCtrl',
+      controllerAs: 'ctrlError',
       controller: 'ErrorController',
       bindToController: true
     };

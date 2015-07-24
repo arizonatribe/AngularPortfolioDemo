@@ -1,7 +1,7 @@
 header
 side-menu
-.layout-main-content(ng-class="{ 'slide-layout-right': navbar.showNavMenu, 'slide-layout-left': !navbar.showNavMenu }", resize-content="navbar.showNavMenu")
-   nav-toggle-button(ng-model="navbar.showNavMenu")
+.layout-main-content(ng-class="{ 'slide-layout-right': ctrlSideMenu.showNavMenu, 'slide-layout-left': !ctrlSideMenu.showNavMenu }", resize-content="ctrlSideMenu.showNavMenu")
+   nav-toggle-button(ng-model="ctrlSideMenu.showNavMenu")
    error-message-handler
    listed-jobs
    listed-companies

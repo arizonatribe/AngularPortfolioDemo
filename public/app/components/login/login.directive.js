@@ -1,7 +1,7 @@
 (function() {
   'use strict';
   angular.module('folio.login')
-      .directive('loginLogout', [LoginDirective]);
+      .directive('login', [LoginDirective]);
 
   /**
    * Directive which renders the login/logout controls
@@ -15,7 +15,7 @@
       restrict: 'E',
       templateUrl: 'components/login/templates/login.template.html',
       controller: 'LoginController',
-      controllerAs: 'loginCtrl',
+      controllerAs: 'ctrlLogin',
       bindToController: true
     };
   }

@@ -1,21 +1,21 @@
 (function() {
   'use strict';
   angular.module('folio.companies')
-  .directive('companiesFilter', [CompaniesDirective]);
+  .directive('companiesFilter', [CompaniesFilterDirective]);
 
   /**
    * Directive which renders the companies filter links
-   * @name folio.jobs.CompaniesDirective
+   * @name folio.jobs.CompaniesFilterDirective
    * @class
    * @returns {{restrict: string, controller: string, controllerAs: string, templateUrl: string}}
    * @constructor
    */
-  function CompaniesDirective() {
+  function CompaniesFilterDirective() {
     return {
       restrict: 'E',
-      templateUrl: 'components/companies/templates/companies.template.html',
-      controller: 'CompaniesController',
-      controllerAs: 'compCtrl',
+      templateUrl: 'components/companies/templates/companies-filter.template.html',
+      controller: 'CompaniesFilterController',
+      controllerAs: 'ctrlCompaniesFilter',
       bindToController: true
     };
   }

@@ -18,7 +18,7 @@
         navMenuToggle: '=ngModel'
       },
       controller: 'NavToggleButtonController',
-      controllerAs: 'navToggleCtrl',
+      controllerAs: 'ctrlNavToggleButton',
       bindToController: true
     };
   }

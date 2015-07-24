@@ -1,21 +1,21 @@
 (function() {
   'use strict';
   angular.module('folio.jobs')
-      .directive('jobsFilter', [JobsDirective]);
+      .directive('jobsFilter', [JobsFilterDirective]);
 
   /**
    * Directive which renders the jobs filter links
-   * @name folio.jobs.JobsDirective
+   * @name folio.jobs.JobsFilterDirective
    * @class
    * @returns {{restrict: string, controller: string, controllerAs: string, templateUrl: string}}
    * @constructor
    */
-  function JobsDirective() {
+  function JobsFilterDirective() {
     return {
       restrict: 'E',
-      templateUrl: 'components/jobs/templates/jobs.template.html',
-      controller: 'JobsController',
-      controllerAs: 'jobsCtrl',
+      templateUrl: 'components/jobs/templates/jobs-filter.template.html',
+      controller: 'JobsFilterController',
+      controllerAs: 'ctrlJobsFilter',
       bindToController: true
     };
   }

@@ -1,11 +1,11 @@
-a(href="#/signoff" ng-click="navbar.toggleGroup('login') && loginCtrl.signOutIfSignedIn()", ng-bind="loginCtrl.authStore.isAuthenticated() ? 'Sign Out' : 'Sign In'")
+a(href="#/signoff" ng-click="ctrlSideMenu.toggleGroup('login') && ctrlLogin.signOutIfSignedIn()", ng-bind="ctrlLogin.authStore.isAuthenticated() ? 'Sign Out' : 'Sign In'")
 #login-form-container
     #login-form-wrapper(role="main")
-        form#login-form(name="loginForm", ng-submit="loginCtrl.signIn()")
-            .authentication-fields(ng-show="!loginCtrl.authStore.isAuthenticated()")
-                .nav-menu-sub-item.field(ng-repeat="txt in ['username', 'password']", id="{{ txt }}-wrapper", ng-show="navbar.showOptionGroup('login')")
-                    label.placeholder-label(for="txt-{{ txt }}") {{ loginCtrl.model[txt].validations.title }}
-                    input.placeholder-input(ng-class="{ 'not-empty': loginForm[txt].$viewValue }", ng-model="loginCtrl.model[txt].value", id="txt-{{ txt }}" name="{{ txt }}", type="{{ txt === 'password' ? txt : 'text' }}" value="", ng-pattern="loginCtrl.model[txt].validations.pattern", ng-minlength="loginCtrl.model[txt].validations.minLength", ng-maxlength="loginCtrl.model[txt].validations.maxLength", required)
-                .nav-menu-sub-item.buttons.buttons-wrapper(ng-show="navbar.showOptionGroup('login')")
-                    button#btn-clear.btn-main(type="button", ng-disabled="!loginForm.password.$viewValue && !loginForm.username.$viewValue", ng-click="loginCtrl.resetModel()", ng-bind="loginCtrl.loginLoading ? 'Cancel' : 'Clear'")
+        form#login-form(name="loginForm", ng-submit="ctrlLogin.signIn()")
+            .authentication-fields(ng-show="!ctrlLogin.authStore.isAuthenticated()")
+                .nav-menu-sub-item.field(ng-repeat="txt in ['username', 'password']", id="{{ txt }}-wrapper", ng-show="ctrlSideMenu.showOptionGroup('login')")
+                    label.placeholder-label(for="txt-{{ txt }}") {{ ctrlLogin.model[txt].validations.title }}
+                    input.placeholder-input(ng-class="{ 'not-empty': loginForm[txt].$viewValue }", ng-model="ctrlLogin.model[txt].value", id="txt-{{ txt }}" name="{{ txt }}", type="{{ txt === 'password' ? txt : 'text' }}" value="", ng-pattern="ctrlLogin.model[txt].validations.pattern", ng-minlength="ctrlLogin.model[txt].validations.minLength", ng-maxlength="ctrlLogin.model[txt].validations.maxLength", required)
+                .nav-menu-sub-item.buttons.buttons-wrapper(ng-show="ctrlSideMenu.showOptionGroup('login')")
+                    button#btn-clear.btn-main(type="button", ng-disabled="!loginForm.password.$viewValue && !loginForm.username.$viewValue", ng-click="ctrlLogin.resetModel()", ng-bind="ctrlLogin.loginLoading ? 'Cancel' : 'Clear'")
                     button#btn-sign-in.btn-main(type="submit", ng-disabled="loginForm.$invalid") Sign In

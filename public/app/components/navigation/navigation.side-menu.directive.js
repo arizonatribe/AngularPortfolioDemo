@@ -15,7 +15,7 @@
         restrict: 'E',
         templateUrl: 'components/navigation/templates/side-menu.template.html',
         controller: 'SideMenuController',
-        controllerAs: 'navbar',
+        controllerAs: 'ctrlSideMenu',
         bindToController: true
       };
   }

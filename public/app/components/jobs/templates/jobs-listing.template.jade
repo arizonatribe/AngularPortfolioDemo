@@ -1,3 +1,3 @@
-.job-listing(ng-repeat="job in jobsLCtrl.jobsService.jobs track by job.id", ng-show="navbar.showOptionGroup('jobs')")
+.job-listing(ng-repeat="job in jobsLCtrl.jobsService.jobs track by job.id", ng-show="ctrlSideMenu.showOptionGroup('jobs')")
    .job-description(ng-bind="::job.description")
    .job-requirements(ng-bind="::job.requirements")
