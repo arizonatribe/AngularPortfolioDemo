@@ -5,14 +5,14 @@
     var _, _s, $rootScope, $scope, element,
             compileDirective = function() {
               inject(function($compile) {
-                element = angular.element('<error-message-handler></error-message-handler>');
+                element = angular.element('<error-message></error-message>');
                 $compile(element)($scope);
               });
 
               $scope.$digest();
             };
 
-    beforeEach(module('components/error/templates/error.template.html'));
+    beforeEach(module('components/error/templates/error-message.template.html'));
 
     beforeEach(inject(function(_errorHandlingService_, $injector, _$rootScope_) {
       $rootScope = _$rootScope_;

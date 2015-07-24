@@ -6,13 +6,18 @@
 module.exports = {
   release: {
     files: {
-      'dist/js/app.min.js': 'dist/js/app.min.js'
+      'dist/js/app.min.js': 'dist/js/app.min.js',
+      'dist/css/app.min.css': 'dist/css/app.min.css'
     },
     options: {
       replacements: [
         {
           pattern: 'temp.config.json',
           replacement: 'js/config.json'
+        },
+        {
+          pattern: /shared\/fonts/g,
+          replacement: '../fonts'
         }
       ]
     }

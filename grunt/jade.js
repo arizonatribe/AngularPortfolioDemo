@@ -4,7 +4,8 @@ var filePaths = require('../config/file-paths.json'),
 
 filePaths.jadePaths.forEach(function(path) {
   devPaths[path.replace('jade', 'html')] = [path];
-  releasePaths[path.replace('jade', 'html').replace('public/app', 'dist')] = [path];
+  releasePaths[path.replace('jade', 'html').replace('public/app', 'dist')] =
+    [path.replace('public/app/index.jade', 'dist/index.jade')];
 });
 
 /**

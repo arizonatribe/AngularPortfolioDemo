@@ -48,6 +48,7 @@ module.exports = {
    * <li>{@link GruntFile.less}:dist</li>
    * <li>{@link GruntFile.cssmin}</li>
    * <li>{@link GruntFile.copy}:dev</li>
+   * <li>{@link GruntFile.string-replace}</li>
    * <li>{@link GruntFile.jadeUsemin}</li>
    * <li>{@link GruntFile.jade}:release</li>
    * <li>{@link GruntFile.clean}:jade</li>
@@ -64,6 +65,7 @@ module.exports = {
       'less:dist',
       'cssmin',
       'copy:dev',
+      'string-replace',
       'jadeUsemin',
       'jade',
       'clean:jade',

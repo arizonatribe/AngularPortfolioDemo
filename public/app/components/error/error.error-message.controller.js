@@ -1,21 +1,21 @@
 (function() {
   'use strict';
   angular.module('folio.error')
-      .controller('ErrorController', ['errorHandlingService', ErrorController]);
+      .controller('ErrorMessageController', ['errorHandlingService', ErrorMessageController]);
 
   /**
    * ErrorController supports the {@link folio.error.ErrorMessageHandlerDirective|ErrorMessageHandlerDirective} and
    * provides it with the {@link folio.shared.ErrorHandlingService|ErrorHandlingService}
-   * @class folio.shared.ErrorController
+   * @class folio.shared.ErrorMessageController
    * @param {object} errorHandlingService error handling service
    * @constructor
    */
-  function ErrorController(errorHandlingService) {
+  function ErrorMessageController(errorHandlingService) {
 
     /**
      * error handling service
      * @property {object}
-     * @name folio.shared.ErrorController#service
+     * @name folio.shared.ErrorMessageController#service
      */
     this.service = errorHandlingService;
   }

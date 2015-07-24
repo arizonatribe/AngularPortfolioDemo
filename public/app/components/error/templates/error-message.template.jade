@@ -1,0 +1,3 @@
+.login-validation-summary-errors(ng-if="ctrlErrorMessage.service.errors && ctrlErrorMessage.service.errors.length > 0")
+    .validation-summary-errors
+        alert(ng-repeat="alert in ctrlErrorMessage.service.errors", type="danger", close="ctrlErrorMessage.service.clearError(alert)") {{alert.Message}}

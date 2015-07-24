@@ -5,8 +5,8 @@
     var _, _s, $timeout, $scope, authService, authStore, errorHandlingService, urlService, $q, $rootScope, $location, $window, createController, controller, fakeData, $httpBackend, validationService, apiCallHandlerService, authToken;
 
     beforeEach(function() {
-      module('components/login/templates/content.template.html');
-      module('components/error/templates/error.template.html');
+      module('components/login/templates/login.template.html');
+      module('components/error/templates/error-message.template.html');
       module('folio.unit-testing.fakeData');
       module('folio.shared');
       module('folio.auth');

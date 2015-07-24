@@ -394,6 +394,19 @@
            */
           currentMilliseconds: function() {
             return Math.floor((new Date()).valueOf() / 1000);
+          },
+          /**
+           * Transforms a camel-case string into a lowercase hyphen-separated string
+           * @param {string} text A string value in camel-case format
+           * @returns {string} A hyphenated version of the original camel-case string
+           */
+          hyphenate: function(text) {
+            if (typeof text !== 'string') {
+              throw new Error('cannot hyphenate text unless text is a string');
+            }
+            return text.replace(/[A-Z0-9]/g, function(s) {
+              return '-' + s.toLowerCase();
+            });
           }
         });
         return $window._;
